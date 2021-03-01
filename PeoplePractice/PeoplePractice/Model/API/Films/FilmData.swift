@@ -19,10 +19,10 @@ struct FilmData: Decodable {
 
 extension FilmData: NamebleStruct {
     var structName: String {
-        "Films"
+        return "Films"
     }
     
     var pageCount: Int {
-        all.count
+        return all.count
     }
 }

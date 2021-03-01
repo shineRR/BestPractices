@@ -8,7 +8,6 @@
 import Foundation
 
 struct Species: Decodable, Displayable {
-    var height: String = "0.0"
     
     let name: String
     let classification: String
@@ -18,7 +17,7 @@ struct Species: Decodable, Displayable {
     let hairColors: String
     let eyeColors: String
     let avgLifespan: String
-    let homeworld: String
+    let homeworld: String?
     let language: String
     let people: [String]
     let films: [String]

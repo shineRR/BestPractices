@@ -23,10 +23,10 @@ struct PlanetsData: Decodable {
 
 extension PlanetsData: NamebleStruct {
     var structName: String {
-        "Planets"
+        return "Planets"
     }
     
     var pageCount: Int {
-        all.count
+        return all.count
     }
 }

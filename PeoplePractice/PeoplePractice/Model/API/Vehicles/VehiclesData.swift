@@ -23,11 +23,11 @@ struct VehiclesData: Decodable {
 
 extension VehiclesData: NamebleStruct {
     var structName: String {
-        "Vehicles"
+        return "Vehicles"
     }
     
     var pageCount: Int {
-        all.count
+        return all.count
     }
     
     

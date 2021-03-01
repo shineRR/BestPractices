@@ -23,12 +23,10 @@ struct PeopleData: Decodable {
 
 extension PeopleData: NamebleStruct {
     var structName: String {
-        "People"
+        return "People"
     }
     
     var pageCount: Int {
-        all.count
+        return all.count
     }
-    
-    
 }

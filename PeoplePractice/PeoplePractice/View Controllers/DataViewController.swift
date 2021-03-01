@@ -15,8 +15,6 @@ class DataViewController: UIViewController {
     private var headerTitles: [NamebleStruct] = []
     private var selectedCell: Displayable?
     
-    let array = [PeopleData.self, StarshipsData.self] as [Any]
-    
     var generalUrls: GeneralData?
     var items: [Displayable] = []
     
@@ -93,6 +91,9 @@ extension DataViewController: UITableViewDelegate, UITableViewDataSource {
         case "Films":
             guard let data = section as? FilmData else { break }
             cellLabel = data.all[indexPath.row].name
+        case "Species":
+            guard let data = section as? SpeciesData else { break }
+            cellLabel = data.all[indexPath.row].name
         default:
             debugPrint("Error")
         }
@@ -126,6 +127,10 @@ extension DataViewController: UITableViewDelegate, UITableViewDataSource {
             segueIdentifier = "peopleSegue"
         case "Films":
             guard let data = section as? FilmData else { break }
+            selectedCell = data.all[indexPath.row]
+            segueIdentifier = "peopleSegue"
+        case "Species":
+            guard let data = section as? SpeciesData else { break }
             selectedCell = data.all[indexPath.row]
             segueIdentifier = "peopleSegue"
         default:
