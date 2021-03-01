@@ -12,16 +12,10 @@ class DataViewController: UIViewController {
     //  MARK: - Vars
     @IBOutlet weak var tableView: UITableView!
     
-    private var headerTitles = [FilmData(count: 0, all: []), PeopleData(count: 0, next: "", previous: "", all: []), PlanetsData(count: 0, next: "", previous: "", all: []), SpeciesData(count: 0, next: "", previous: "", all: []), StarshipsData(count: 0, next: "", previous: "", all: []), VehiclesData(count: 0, next: "", previous: "", all: [])] as [NamebleStruct]
+    private var headerTitles: [NamebleStruct] = []
     
     private var selectedCell: Displayable?
     
-    private var people: PeopleData?
-    private var starships: StarshipsData?
-    private var planets: PlanetsData?
-    private var vehicles: VehiclesData?
-    private var species: SpeciesData?
-    private var films: FilmData?
     private var dictionary = Dictionary<String, Int>()
     
     var generalUrls: GeneralData?
@@ -49,28 +43,10 @@ class DataViewController: UIViewController {
     private func parseApi<T: Decodable>(url: String, of: T.Type) {
         let request = AF.request(url)
         request.validate().responseDecodable(of: T.self) { (response) in
-            guard let data = response.value else { return }
-            switch data {
-                case is PeopleData:
-                    self.people = data as? PeopleData
-                    self.dictionary[self.people?.structName ?? ""] = self.people?.all.count
-                case is StarshipsData:
-                    self.starships = data as? StarshipsData
-                    self.dictionary[self.starships?.structName ?? ""] = self.starships?.all.count
-                case is PlanetsData:
-                    self.planets = data as? PlanetsData
-                    self.dictionary[self.planets?.structName ?? ""] = self.planets?.all.count
-                case is VehiclesData:
-                    self.vehicles = data as? VehiclesData
-                    self.dictionary[self.vehicles?.structName ?? ""] = self.vehicles?.all.count
-                case is FilmData:
-                    self.films = data as? FilmData
-                    self.dictionary[self.films?.structName ?? ""] = self.films?.all.count
-                case is SpeciesData:
-                    self.species = data as? SpeciesData
-                    self.dictionary[self.species?.structName ?? ""] = self.species?.all.count
-                default: print("default")
-            }
+            guard let data = response.value as? NamebleStruct else { return }
+            self.headerTitles.append(data)
+            print(data.pageCount)
+            self.dictionary[data.structName] = data.pageCount
             self.tableView.reloadData()
         }
     }
@@ -103,22 +79,27 @@ extension DataViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dataCell") as! DataTableViewCell
         let section = headerTitles[indexPath.section]
         var cellLabel = ""
+        
         switch section.structName {
-        case people?.structName:
-            cellLabel = people?.all[indexPath.row].name ?? "Name"
-        case planets?.structName:
-            cellLabel = planets?.all[indexPath.row].name ?? "Name"
-        case films?.structName:
-            cellLabel = films?.all[indexPath.row].title ?? "Title"
-        case starships?.structName:
-            cellLabel = starships?.all[indexPath.row].name ?? "Name"
-        case vehicles?.structName:
-            cellLabel = vehicles?.all[indexPath.row].name ?? "Name"
-        case species?.structName:
-            cellLabel = species?.all[indexPath.row].name ?? "Name"
+        case "People":
+            guard let data = section as? PeopleData else { break }
+            cellLabel = data.all[indexPath.row].name
+        case "Starships":
+            guard let data = section as? StarshipsData else { break }
+            cellLabel = data.all[indexPath.row].name
+        case "Vehicles":
+            guard let data = section as? VehiclesData else { break }
+            cellLabel = data.all[indexPath.row].name
+        case "Planets":
+            guard let data = section as? PlanetsData else { break }
+            cellLabel = data.all[indexPath.row].name
+        case "Films":
+            guard let data = section as? FilmData else { break }
+            cellLabel = data.all[indexPath.row].name
         default:
-            cellLabel = "Name"
+            debugPrint("Error")
         }
+        
         cell.setupCell(label: cellLabel)
         return cell
     }
@@ -128,28 +109,32 @@ extension DataViewController: UITableViewDelegate, UITableViewDataSource {
         var segueIdentifier = "peopleSegue"
         
         let section = headerTitles[indexPath.section]
+        
         switch section.structName {
-        case people?.structName:
-            selectedCell = people?.all[indexPath.row]
+        case "People":
+            guard let data = section as? PeopleData else { break }
+            selectedCell = data.all[indexPath.row]
             segueIdentifier = "peopleSegue"
-        case planets?.structName:
-            selectedCell = planets?.all[indexPath.row]
+        case "Starships":
+            guard let data = section as? StarshipsData else { break }
+            selectedCell = data.all[indexPath.row]
             segueIdentifier = "peopleSegue"
-        case films?.structName:
-            selectedCell = films?.all[indexPath.row]
+        case "Vehicles":
+            guard let data = section as? VehiclesData else { break }
+            selectedCell = data.all[indexPath.row]
             segueIdentifier = "peopleSegue"
-        case starships?.structName:
-            selectedCell = starships?.all[indexPath.row]
+        case "Planets":
+            guard let data = section as? PlanetsData else { break }
+            selectedCell = data.all[indexPath.row]
             segueIdentifier = "peopleSegue"
-        case vehicles?.structName:
-            selectedCell = vehicles?.all[indexPath.row]
-            segueIdentifier = "peopleSegue"
-        case species?.structName:
-            selectedCell = species?.all[indexPath.row]
+        case "Films":
+            guard let data = section as? FilmData else { break }
+            selectedCell = data.all[indexPath.row]
             segueIdentifier = "peopleSegue"
         default:
-            debugPrint("Error!")
+            debugPrint("Error")
         }
+        
         performSegue(withIdentifier: segueIdentifier, sender: nil)
     }
 }
