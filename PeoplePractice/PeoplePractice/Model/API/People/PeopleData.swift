@@ -21,7 +21,7 @@ struct PeopleData: Decodable {
     }
 }
 
-extension PeopleData: NamableStruct {
+extension PeopleData: NamebleStruct {
     var structName: String {
         "People"
     }

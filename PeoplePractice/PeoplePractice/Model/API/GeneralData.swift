@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol NamableStruct {
+protocol NamebleStruct {
     var structName: String { get }
     var pageCount: Int { get }
 }

@@ -21,7 +21,7 @@ struct VehiclesData: Decodable {
     }
 }
 
-extension VehiclesData: NamableStruct {
+extension VehiclesData: NamebleStruct {
     var structName: String {
         "Vehicles"
     }

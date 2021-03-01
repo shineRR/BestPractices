@@ -17,7 +17,7 @@ struct FilmData: Decodable {
     }
 }
 
-extension FilmData: NamableStruct {
+extension FilmData: NamebleStruct {
     var structName: String {
         "Films"
     }

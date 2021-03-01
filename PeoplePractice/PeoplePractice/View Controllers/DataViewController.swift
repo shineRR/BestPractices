@@ -12,7 +12,7 @@ class DataViewController: UIViewController {
     //  MARK: - Vars
     @IBOutlet weak var tableView: UITableView!
     
-    private var headerTitles = [FilmData(count: 0, all: []), PeopleData(count: 0, next: "", previous: "", all: []), PlanetsData(count: 0, next: "", previous: "", all: []), SpeciesData(count: 0, next: "", previous: "", all: []), StarshipsData(count: 0, next: "", previous: "", all: []), VehiclesData(count: 0, next: "", previous: "", all: [])] as [NamableStruct]
+    private var headerTitles = [FilmData(count: 0, all: []), PeopleData(count: 0, next: "", previous: "", all: []), PlanetsData(count: 0, next: "", previous: "", all: []), SpeciesData(count: 0, next: "", previous: "", all: []), StarshipsData(count: 0, next: "", previous: "", all: []), VehiclesData(count: 0, next: "", previous: "", all: [])] as [NamebleStruct]
     
     private var selectedCell: Displayable?
     

@@ -21,7 +21,7 @@ struct PlanetsData: Decodable {
     }
 }
 
-extension PlanetsData: NamableStruct {
+extension PlanetsData: NamebleStruct {
     var structName: String {
         "Planets"
     }
