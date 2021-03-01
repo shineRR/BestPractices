@@ -13,10 +13,9 @@ class DataViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var headerTitles: [NamebleStruct] = []
-    
     private var selectedCell: Displayable?
     
-    private var dictionary = Dictionary<String, Int>()
+    let array = [PeopleData.self, StarshipsData.self] as [Any]
     
     var generalUrls: GeneralData?
     var items: [Displayable] = []
@@ -29,7 +28,6 @@ class DataViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         navigationController?.navigationBar.isHidden = false
-        
         fetchData()
     }
     
@@ -45,8 +43,6 @@ class DataViewController: UIViewController {
         request.validate().responseDecodable(of: T.self) { (response) in
             guard let data = response.value as? NamebleStruct else { return }
             self.headerTitles.append(data)
-            print(data.pageCount)
-            self.dictionary[data.structName] = data.pageCount
             self.tableView.reloadData()
         }
     }
@@ -72,10 +68,11 @@ extension DataViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dictionary[headerTitles[section].structName] ?? 0
+        return headerTitles[section].pageCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "dataCell") as! DataTableViewCell
         let section = headerTitles[indexPath.section]
         var cellLabel = ""
@@ -105,9 +102,9 @@ extension DataViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         tableView.deselectRow(at: indexPath, animated: true)
         var segueIdentifier = "peopleSegue"
-        
         let section = headerTitles[indexPath.section]
         
         switch section.structName {

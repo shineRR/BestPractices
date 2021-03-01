@@ -26,7 +26,7 @@ class DetailPersonViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setupLabel()
+        navigationItem.title = personDisplayable?.name
         doRequest()
     }
     
