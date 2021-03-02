@@ -25,11 +25,11 @@
 		14A3BCC125ED07CE00CFF881 /* PlanetsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A3BCC025ED07CE00CFF881 /* PlanetsData.swift */; };
 		14A3BCC425ED07D400CFF881 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A3BCC325ED07D400CFF881 /* Planet.swift */; };
 		14A3BCC925ED09FF00CFF881 /* VehiclesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A3BCC825ED09FF00CFF881 /* VehiclesData.swift */; };
-		14A3BCCC25ED0A1300CFF881 /* StarshipsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A3BCCB25ED0A1300CFF881 /* StarshipsData.swift */; };
 		14A3BCCF25ED0A2B00CFF881 /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A3BCCE25ED0A2B00CFF881 /* Starship.swift */; };
 		14A3BCD225ED0A3200CFF881 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A3BCD125ED0A3200CFF881 /* Vehicle.swift */; };
 		14A3BCD725ED0C8700CFF881 /* SpeciesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A3BCD625ED0C8700CFF881 /* SpeciesData.swift */; };
 		14A3BCDB25ED0D3300CFF881 /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A3BCDA25ED0D3300CFF881 /* Species.swift */; };
+		14A6888425EE1D18001FC37D /* StarshipsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A6888325EE1D18001FC37D /* StarshipsData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,11 +52,11 @@
 		14A3BCC025ED07CE00CFF881 /* PlanetsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsData.swift; sourceTree = "<group>"; };
 		14A3BCC325ED07D400CFF881 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		14A3BCC825ED09FF00CFF881 /* VehiclesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesData.swift; sourceTree = "<group>"; };
-		14A3BCCB25ED0A1300CFF881 /* StarshipsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StarshipsData.swift; path = ../../../../../../../StarshipsData.swift; sourceTree = "<group>"; };
 		14A3BCCE25ED0A2B00CFF881 /* Starship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
 		14A3BCD125ED0A3200CFF881 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		14A3BCD625ED0C8700CFF881 /* SpeciesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesData.swift; sourceTree = "<group>"; };
 		14A3BCDA25ED0D3300CFF881 /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
+		14A6888325EE1D18001FC37D /* StarshipsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipsData.swift; sourceTree = "<group>"; };
 		52AE4CAF13AECBD5F6906331 /* Pods-PeoplePractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeoplePractice.release.xcconfig"; path = "Target Support Files/Pods-PeoplePractice/Pods-PeoplePractice.release.xcconfig"; sourceTree = "<group>"; };
 		B18A527A981690E32E4E3F07 /* Pods_PeoplePractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeoplePractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE1A4384F4566D51DFBCB290 /* Pods-PeoplePractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeoplePractice.debug.xcconfig"; path = "Target Support Files/Pods-PeoplePractice/Pods-PeoplePractice.debug.xcconfig"; sourceTree = "<group>"; };
@@ -179,8 +179,8 @@
 		14A3BCC725ED09F000CFF881 /* Starships */ = {
 			isa = PBXGroup;
 			children = (
-				14A3BCCB25ED0A1300CFF881 /* StarshipsData.swift */,
 				14A3BCCE25ED0A2B00CFF881 /* Starship.swift */,
+				14A6888325EE1D18001FC37D /* StarshipsData.swift */,
 			);
 			path = Starships;
 			sourceTree = "<group>";
@@ -330,7 +330,6 @@
 				14311BC625ED28A300946C4D /* DetailPersonViewController.swift in Sources */,
 				14A3BCD725ED0C8700CFF881 /* SpeciesData.swift in Sources */,
 				1444AAF125ECE97D0016ABE3 /* ViewController.swift in Sources */,
-				14A3BCCC25ED0A1300CFF881 /* StarshipsData.swift in Sources */,
 				14A3BCC425ED07D400CFF881 /* Planet.swift in Sources */,
 				14089B4E25ECF7D700549267 /* DataTableViewCell.swift in Sources */,
 				14A3BCCF25ED0A2B00CFF881 /* Starship.swift in Sources */,
@@ -338,6 +337,7 @@
 				14A3BCD225ED0A3200CFF881 /* Vehicle.swift in Sources */,
 				14A3BCBD25ED075C00CFF881 /* Film.swift in Sources */,
 				14A3BCB825ED070C00CFF881 /* FilmData.swift in Sources */,
+				14A6888425EE1D18001FC37D /* StarshipsData.swift in Sources */,
 				149E680725ECFA0F00440DE4 /* GeneralData.swift in Sources */,
 				149E680E25ECFFB700440DE4 /* Person.swift in Sources */,
 				1444AAEF25ECE97D0016ABE3 /* SceneDelegate.swift in Sources */,
