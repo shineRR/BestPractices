@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     }
     
     private func doRequest() {
-        ApiHelper().requestForGeneralData(url: requestURL, onSucess: { [weak self] data in
+        ApiHelper.requestForGeneralData(url: requestURL, onSucess: { [weak self] data in
             self?.generalUrls = data
             self?.showTableView(identifier: "tableViewController")
         })

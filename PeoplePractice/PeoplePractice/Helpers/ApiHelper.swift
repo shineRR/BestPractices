@@ -11,7 +11,7 @@ import ObjectMapper
 
 class ApiHelper {
     
-    func parseApi<T: Mappable>(url: String, of: T.Type, name: String, onSucess: @escaping (_ obj: ApiData) -> ()) {
+    static func parseApi<T: Mappable>(url: String, of: T.Type, name: String, onSucess: @escaping (_ obj: ApiData) -> ()) {
         let request = AF.request(url)
         request.responseJSON { (response) in
             guard var data = response.value as? [String: Any] else { return }
@@ -22,7 +22,7 @@ class ApiHelper {
         }
     }
     
-    func requestForPerson(url: String, onSucess: @escaping (_ person: Person) -> ()) {
+    static func requestForPerson(url: String, onSucess: @escaping (_ person: Person) -> ()) {
         let request = AF.request(url)
         request.responseJSON { (response) in
             guard let data = response.value as? [String: Any],
@@ -31,7 +31,7 @@ class ApiHelper {
         }
     }
     
-    func requestForGeneralData(url: String, onSucess: @escaping (_ data: GeneralData) -> ()) {
+    static func requestForGeneralData(url: String, onSucess: @escaping (_ data: GeneralData) -> ()) {
         let request = AF.request(url)
         request.responseDecodable(of: GeneralData.self) { (response) in
             guard let data = response.value else { return }

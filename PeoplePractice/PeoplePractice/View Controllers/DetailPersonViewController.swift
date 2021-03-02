@@ -47,7 +47,7 @@ class DetailPersonViewController: UIViewController {
     
     private func doRequest() {
         guard let url = url else { return }
-        ApiHelper().requestForPerson(url: url) { person in
+        ApiHelper.requestForPerson(url: url) { person in
             self.person = person
             self.setupLabel()
         }

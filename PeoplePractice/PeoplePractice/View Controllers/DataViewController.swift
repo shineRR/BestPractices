@@ -37,12 +37,12 @@ class DataViewController: UIViewController {
             self?.headerTitles.append(obj)
             self?.tableView.reloadData()
         }
-        ApiHelper().parseApi(url: generalUrls?.people ?? "", of: PeopleData.self, name: "People", onSucess: closure)
-        ApiHelper().parseApi(url: generalUrls?.starships ?? "", of: StarshipsData.self, name: "Starships", onSucess: closure)
-        ApiHelper().parseApi(url: generalUrls?.films ?? "", of: FilmsData.self, name: "Films", onSucess: closure)
-        ApiHelper().parseApi(url: generalUrls?.planets ?? "", of: PlanetsData.self, name: "Planets", onSucess: closure)
-        ApiHelper().parseApi(url: generalUrls?.vehicles ?? "", of: VehiclesData.self, name: "Vehicles", onSucess: closure)
-        ApiHelper().parseApi(url: generalUrls?.species ?? "", of: SpeciesData.self, name: "Species", onSucess: closure)
+        ApiHelper.parseApi(url: generalUrls?.people ?? "", of: PeopleData.self, name: "People", onSucess: closure)
+        ApiHelper.parseApi(url: generalUrls?.starships ?? "", of: StarshipsData.self, name: "Starships", onSucess: closure)
+        ApiHelper.parseApi(url: generalUrls?.films ?? "", of: FilmsData.self, name: "Films", onSucess: closure)
+        ApiHelper.parseApi(url: generalUrls?.planets ?? "", of: PlanetsData.self, name: "Planets", onSucess: closure)
+        ApiHelper.parseApi(url: generalUrls?.vehicles ?? "", of: VehiclesData.self, name: "Vehicles", onSucess: closure)
+        ApiHelper.parseApi(url: generalUrls?.species ?? "", of: SpeciesData.self, name: "Species", onSucess: closure)
     }
 }
 
