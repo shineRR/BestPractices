@@ -8,8 +8,12 @@
 import Foundation
 import ObjectMapper
 
+enum ModelTypes: String, CaseIterable {
+    case people = "People", starships = "Starships", species = "Species", films = "Films", planets = "Planets", vehicles = "Vehicles"
+}
+
 class ApiData: Mappable  {
-    var objectName: String?
+    var object: ModelTypes?
     var count: Int?
     var next: String?
     var previous: String?
@@ -24,7 +28,7 @@ class ApiData: Mappable  {
     }
     
     func mapping(map: Map) {
-        objectName <- map["objectName"]
+        object <- map["objectName"]
         count <- map["count"]
         next <- map["next"]
         previous <- map["previous"]

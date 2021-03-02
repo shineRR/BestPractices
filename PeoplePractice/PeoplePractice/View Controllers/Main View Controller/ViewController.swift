@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  PeoplePractice
 //
-//  Created by Ilya Baryko on 1.03.21.
+//  Created by Ilya Baryko on 2.03.21.
 //
 
 import UIKit
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     }
     
     private func showTableView(identifier: String) {
-        guard let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: identifier) as? DataViewController else { return }
+        let vc = DataViewController(nibName: "DataViewController", bundle: nil)
         vc.generalUrls = generalUrls
         navigationController?.pushViewController(vc, animated: true)
     }

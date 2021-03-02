@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="PeoplePractice" customModuleProvider="target">
+            <connections>
+                <outlet property="downloadDataButton" destination="CPv-qm-bFQ" id="sQC-AR-b2m"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="ViewCo">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1311956" translatesAutoresizingMaskIntoConstraints="NO" id="5MU-DM-MNj">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPv-qm-bFQ">
+                    <rect key="frame" x="132" y="423" width="150" height="50"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="15e-3c-kQT"/>
+                        <constraint firstAttribute="height" constant="50" id="nDl-q8-zlv"/>
+                    </constraints>
+                    <state key="normal" title="Download">
+                        <color key="titleColor" systemColor="systemPinkColor"/>
+                    </state>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="5MU-DM-MNj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4A9-50-fmX"/>
+                <constraint firstItem="5MU-DM-MNj" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="9VO-eR-ojM"/>
+                <constraint firstItem="5MU-DM-MNj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Pgv-7P-kX3"/>
+                <constraint firstAttribute="bottom" secondItem="5MU-DM-MNj" secondAttribute="bottom" id="Rak-F9-hnA"/>
+                <constraint firstItem="CPv-qm-bFQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Vzf-mt-XgW"/>
+                <constraint firstItem="CPv-qm-bFQ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="WLT-Fc-H4Y"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="20.758928571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="1311956" width="1125" height="2436"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

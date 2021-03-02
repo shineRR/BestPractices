@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eOO-EQ-pdm">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,14 +13,14 @@
             <objects>
                 <viewController id="6Ip-rJ-ONN" customClass="ViewController" customModule="PeoplePractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A9R-h9-N99">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1311956" translatesAutoresizingMaskIntoConstraints="NO" id="JfK-vo-gzJ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cq-G3-9fy">
-                                <rect key="frame" x="60" y="259" width="200" height="50"/>
+                                <rect key="frame" x="107" y="423" width="200" height="50"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="C6X-kq-XcR"/>
@@ -46,34 +46,33 @@
                     <navigationItem key="navigationItem" id="HqK-GL-Eya"/>
                     <connections>
                         <outlet property="downloadDataButton" destination="9cq-G3-9fy" id="HeQ-zI-e6H"/>
-                        <segue destination="AxT-83-FW7" kind="show" identifier="dataTableView" id="oLo-u1-bTr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hS-UT-3Uw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1889.8550724637682" y="-66.294642857142861"/>
         </scene>
-        <!--Data View Controller-->
+        <!--View Controller-->
         <scene sceneID="nv4-tZ-eY4">
             <objects>
-                <viewController storyboardIdentifier="tableViewController" id="AxT-83-FW7" customClass="DataViewController" customModule="PeoplePractice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tableViewController" id="AxT-83-FW7" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="phc-fC-NyC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f8Y-kR-a3z">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dataCell" rowHeight="84" id="vjn-p3-gAg" customClass="DataTableViewCell" customModule="PeoplePractice" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="84"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vjn-p3-gAg" id="26e-Gv-ilk">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Af3-fv-Lx1">
-                                                    <rect key="frame" x="41" y="31.5" width="42" height="21"/>
+                                                    <rect key="frame" x="45" y="31.5" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -103,7 +102,6 @@
                     <navigationItem key="navigationItem" id="hLQ-2n-7FA"/>
                     <connections>
                         <outlet property="tableView" destination="f8Y-kR-a3z" id="bSp-iF-oH8"/>
-                        <segue destination="Lnu-v7-ahP" kind="show" identifier="peopleSegue" id="vLC-Zp-QOO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X0M-vM-lqp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -113,9 +111,9 @@
         <!--Person-->
         <scene sceneID="h5D-p2-iLD">
             <objects>
-                <viewController storyboardIdentifier="personPage" id="Lnu-v7-ahP" customClass="DetailPersonViewController" customModule="PeoplePractice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="personPage" id="Lnu-v7-ahP" customClass="DetailPersonViewController2" customModule="PeoplePractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gCO-jK-drH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hm-Eg-KzQ">
@@ -276,7 +274,7 @@
             <objects>
                 <navigationController id="eOO-EQ-pdm" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="aGu-TV-Nqh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

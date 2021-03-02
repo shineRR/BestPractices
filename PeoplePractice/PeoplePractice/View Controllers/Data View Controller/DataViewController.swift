@@ -2,7 +2,7 @@
 //  DataViewController.swift
 //  PeoplePractice
 //
-//  Created by Ilya Baryko on 1.03.21.
+//  Created by Ilya Baryko on 2.03.21.
 //
 
 import UIKit
@@ -26,6 +26,7 @@ class DataViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(DataTableViewCell.self, forCellReuseIdentifier: "myCell")
         navigationController?.navigationBar.isHidden = false
         fetchData()
     }
@@ -55,7 +56,7 @@ extension DataViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return headerTitles[section].objectName
+        return headerTitles[section].object?.rawValue
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,7 +64,7 @@ extension DataViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "dataCell") as! DataTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! DataTableViewCell
         let model = headerTitles[indexPath.section]
         
         cell.setupCell(model: model, index: indexPath.row)
@@ -73,11 +74,12 @@ extension DataViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
-
-        guard let dataFromCell = tableView.cellForRow(at: indexPath) as? DataTableViewCell,
-              let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "personPage") as? DetailPersonViewController else { return }
+        let vc = DetailPersonViewController(nibName: "DetailPersonViewController", bundle: nil)
+        guard let dataFromCell = tableView.cellForRow(at: indexPath) as? DataTableViewCell else { return }
+        
         vc.url = dataFromCell.url
-        vc.navigationItem.title = dataFromCell.nameLabel.text
+        vc.navigationItem.title = dataFromCell.textLabel?.text
+    
         navigationController?.pushViewController(vc, animated: true)
     }
 }
