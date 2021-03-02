@@ -10,18 +10,19 @@ import Alamofire
 
 class ViewController: UIViewController {
     //  MARK: - Vars
-    @IBOutlet weak var downloadData: UIButton!
     
-    private var canWind: Bool = false
+    @IBOutlet weak var downloadDataButton: UIButton!
+    
+    private let requestURL = "https://swapi.dev/api/"
     private var generalUrls: GeneralData?
+    private var canWind: Bool = false
     
     //  MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         setupButton()
-        doRequest()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,27 +31,27 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if canWind, let vc = segue.destination as? DataViewController, segue.identifier == "dataTableView" {
-            vc.generalUrls = generalUrls
-        }
-    }
     //  MARK: - Functions
+    
     @IBAction func downloadTapped(_ sender: Any) {
-        canWind ? performSegue(withIdentifier: "dataTableView", sender: nil) : doRequest()
+        doRequest()
+    }
+    
+    private func showTableView(identifier: String) {
+        guard let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: identifier) as? DataViewController else { return }
+        vc.generalUrls = generalUrls
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func setupButton() {
-        downloadData.backgroundColor = .green
-        downloadData.layer.cornerRadius = 20
+        downloadDataButton.backgroundColor = .green
+        downloadDataButton.layer.cornerRadius = 20
     }
     
     private func doRequest() {
-        let request = AF.request("https://swapi.dev/api/")
-        request.responseDecodable(of: GeneralData.self) { (response) in
-            guard let data = response.value else { return }
-            self.canWind = true
-            self.generalUrls = data
-        }
+        ApiHelper().requestForGeneralData(url: requestURL, onSucess: { [weak self] data in
+            self?.generalUrls = data
+            self?.showTableView(identifier: "tableViewController")
+        })
     }
 }

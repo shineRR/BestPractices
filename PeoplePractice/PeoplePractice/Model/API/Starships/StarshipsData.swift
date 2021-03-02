@@ -6,27 +6,17 @@
 //
 
 import Foundation
+import ObjectMapper
 
-struct StarshipsData: Decodable {
-    let count: Int
-    let next: String?
-    let previous: String?
-    let all: [Starship]
+class StarshipsData: ApiData {
+    var results: [Starship]?
     
-    enum CodingKeys: String, CodingKey {
-        case count
-        case next
-        case previous
-        case all = "results"
-    }
-}
-
-extension StarshipsData: NamebleStruct {
-    var structName: String {
-        return "Starships"
+    required init?(map: Map) {
+        results <- map["results"]
+        super.init(map: map, currentPageCount: results?.count)
     }
     
-    var pageCount: Int {
-        return all.count
+    required init?(map: Map, currentPageCount: Int?) {
+        fatalError("init(map:currentPageCount:) has not been implemented")
     }
 }

@@ -6,37 +6,42 @@
 //
 
 import Foundation
+import ObjectMapper
 
-struct Planet: Decodable, Displayable {
-    let name: String
-    let rotationPeriod: String
-    let orbitalPeriod: String
-    let diameter: String
-    let climate: String
-    let gravity: String
-    let terrain: String
-    let surfaceWater: String
-    let population: String
-    let residents: [String]
-    let films: [String]
-    let created: String
-    let edited: String
-    let url: String
+class Planet: Mappable {
+    var name: String?
+    var rotationPeriod: String?
+    var orbitalPeriod: String?
+    var diameter: String?
+    var climate: String?
+    var gravity: String?
+    var terrain: String?
+    var surfaceWater: String?
+    var population: String?
+    var residents: [String]?
+    var films: [String]?
+    var created: String?
+    var edited: String?
+    var url: String?
     
-    enum CodingKeys: String, CodingKey {
-        case name
-        case rotationPeriod = "rotation_period"
-        case orbitalPeriod = "orbital_period"
-        case diameter
-        case climate
-        case gravity
-        case terrain
-        case surfaceWater = "surface_water"
-        case population
-        case residents
-        case films
-        case created
-        case edited
-        case url
+    required init?(map: Map) {
+        mapping(map: map)
+    }
+    
+    func mapping(map: Map) {
+        name <- map["name"]
+        rotationPeriod <- map["rotation_period"]
+        orbitalPeriod <- map["orbital_period"]
+        diameter <- map["diameter"]
+        climate <- map["climate"]
+        gravity <- map["gravity"]
+        terrain <- map["terrain"]
+        surfaceWater <- map["surface_water"]
+        population <- map["population"]
+        residents <- map["residents"]
+        films <- map["films"]
+        created <- map["created"]
+        edited <- map["edited"]
+        url <- map["url"]
     }
 }

@@ -45,7 +45,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="HqK-GL-Eya"/>
                     <connections>
-                        <outlet property="downloadData" destination="9cq-G3-9fy" id="cuH-i5-uAe"/>
+                        <outlet property="downloadDataButton" destination="9cq-G3-9fy" id="HeQ-zI-e6H"/>
                         <segue destination="AxT-83-FW7" kind="show" identifier="dataTableView" id="oLo-u1-bTr"/>
                     </connections>
                 </viewController>
@@ -56,7 +56,7 @@
         <!--Data View Controller-->
         <scene sceneID="nv4-tZ-eY4">
             <objects>
-                <viewController id="AxT-83-FW7" customClass="DataViewController" customModule="PeoplePractice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tableViewController" id="AxT-83-FW7" customClass="DataViewController" customModule="PeoplePractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="phc-fC-NyC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,7 +86,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="name" destination="Af3-fv-Lx1" id="iSN-fA-XwU"/>
+                                            <outlet property="nameLabel" destination="Af3-fv-Lx1" id="Mg6-NS-E8K"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -108,7 +108,7 @@
         <!--Person-->
         <scene sceneID="h5D-p2-iLD">
             <objects>
-                <viewController id="Lnu-v7-ahP" customClass="DetailPersonViewController" customModule="PeoplePractice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="personPage" id="Lnu-v7-ahP" customClass="DetailPersonViewController" customModule="PeoplePractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gCO-jK-drH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -256,7 +256,7 @@
                         <outlet property="eyeColorLabel" destination="Dq8-RU-yez" id="wWV-xD-GFJ"/>
                         <outlet property="genderLabel" destination="KuT-FE-Dyi" id="awI-3N-3Xx"/>
                         <outlet property="hairColorLabel" destination="jQ8-aQ-HT5" id="Ipy-cx-0Xe"/>
-                        <outlet property="heightLabel" destination="E3N-pF-dYt" id="cCE-rA-CA9"/>
+                        <outlet property="heightLabel" destination="U1s-RO-yaF" id="YND-Up-Spx"/>
                         <outlet property="massLabel" destination="E3N-pF-dYt" id="je8-k9-DWZ"/>
                         <outlet property="nameLabel" destination="PXb-A6-jUh" id="fC1-Un-XiX"/>
                         <outlet property="skinColorLabel" destination="XgS-ba-RVj" id="CvN-8c-2KY"/>

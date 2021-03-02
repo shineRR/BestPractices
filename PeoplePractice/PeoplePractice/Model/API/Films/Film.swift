@@ -6,31 +6,30 @@
 //
 
 import Foundation
+import ObjectMapper
 
-struct Film: Decodable {
-    let id: Int
-    let title: String
-    let openingCrawl: String
-    let director: String
-    let producer: String
-    let releaseDate: String
-    let starships: [String]
-    let url: String
+class Film: Mappable {
+    var id: Int?
+    var title: String?
+    var openingCrawl: String?
+    var director: String?
+    var producer: String?
+    var releaseDate: String?
+    var starships: [String]?
+    var url: String?
     
-    enum CodingKeys: String, CodingKey {
-        case id = "episode_id"
-        case title
-        case openingCrawl = "opening_crawl"
-        case director
-        case producer
-        case releaseDate = "release_date"
-        case starships
-        case url
+    required init?(map: Map) {
+        mapping(map: map)
     }
-}
-
-extension Film: Displayable {
-    var name: String {
-        title
+    
+    func mapping(map: Map) {
+        id <- map["episode_id"]
+        title <- map["title"]
+        openingCrawl <- map["opening_crawl"]
+        director <- map["director"]
+        producer <- map["producer"]
+        releaseDate <- map["release_date"]
+        starships <- map["starships"]
+        url <- map["url"]
     }
 }

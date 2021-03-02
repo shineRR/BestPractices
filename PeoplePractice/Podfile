@@ -7,4 +7,5 @@ target 'PeoplePractice' do
 
   # Pods for PeoplePractice
   pod 'Alamofire'
+  pod 'ObjectMapper'
 end

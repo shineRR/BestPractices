@@ -6,40 +6,46 @@
 //
 
 import Foundation
+import ObjectMapper
 
-struct Species: Decodable, Displayable {
+class Species: Mappable {
     
-    let name: String
-    let classification: String
-    let designation: String
-    let avgHeight: String
-    let skinColors: String
-    let hairColors: String
-    let eyeColors: String
-    let avgLifespan: String
-    let homeworld: String?
-    let language: String
-    let people: [String]
-    let films: [String]
-    let created: String
-    let edited: String
-    let url: String
-
-    enum CodingKeys: String, CodingKey {
-        case name
-        case classification
-        case designation
-        case avgHeight = "average_height"
-        case skinColors = "skin_colors"
-        case hairColors = "hair_colors"
-        case eyeColors = "eye_colors"
-        case avgLifespan = "average_lifespan"
-        case homeworld
-        case language
-        case people
-        case films
-        case created
-        case edited
-        case url
+    var name: String?
+    var currentPageCount: Int?
+    var classification: String?
+    var designation: String?
+    var avgHeight: String?
+    var skinColors: String?
+    var hairColors: String?
+    var eyeColors: String?
+    var avgLifespan: String?
+    var homeworld: String?
+    var language: String?
+    var people: [String]?
+    var films: [String]?
+    var created: String?
+    var edited: String?
+    var url: String?
+    
+    required init?(map: Map) {
+        mapping(map: map)
+    }
+    
+    func mapping(map: Map) {
+        name <- map["name"]
+        classification <- map["classification"]
+        designation <- map["designation"]
+        avgHeight <- map["average_height"]
+        skinColors <- map["skin_colors"]
+        hairColors <- map["hair_colors"]
+        eyeColors <- map["eye_colors"]
+        avgLifespan <- map["average_lifespan"]
+        homeworld <- map["homeworld"]
+        language <- map["language"]
+        people <- map["people"]
+        films <- map["films"]
+        created <- map["created"]
+        edited <- map["edited"]
+        url <- map["url"]
     }
 }

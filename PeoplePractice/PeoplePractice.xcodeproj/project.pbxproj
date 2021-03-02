@@ -17,10 +17,12 @@
 		1444AAF425ECE97D0016ABE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1444AAF225ECE97D0016ABE3 /* Main.storyboard */; };
 		1444AAF625ECE9800016ABE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1444AAF525ECE9800016ABE3 /* Assets.xcassets */; };
 		1444AAF925ECE9800016ABE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1444AAF725ECE9800016ABE3 /* LaunchScreen.storyboard */; };
+		147FB1CE25EE2D0C00CD5994 /* ApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147FB1CD25EE2D0C00CD5994 /* ApiHelper.swift */; };
+		147FB1D325EE2F5900CD5994 /* ApiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147FB1D225EE2F5900CD5994 /* ApiData.swift */; };
 		149E680725ECFA0F00440DE4 /* GeneralData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E680625ECFA0F00440DE4 /* GeneralData.swift */; };
 		149E680A25ECFF5E00440DE4 /* PeopleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E680925ECFF5E00440DE4 /* PeopleData.swift */; };
 		149E680E25ECFFB700440DE4 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E680D25ECFFB700440DE4 /* Person.swift */; };
-		14A3BCB825ED070C00CFF881 /* FilmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A3BCB725ED070C00CFF881 /* FilmData.swift */; };
+		14A3BCB825ED070C00CFF881 /* FilmsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A3BCB725ED070C00CFF881 /* FilmsData.swift */; };
 		14A3BCBD25ED075C00CFF881 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A3BCBC25ED075C00CFF881 /* Film.swift */; };
 		14A3BCC125ED07CE00CFF881 /* PlanetsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A3BCC025ED07CE00CFF881 /* PlanetsData.swift */; };
 		14A3BCC425ED07D400CFF881 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A3BCC325ED07D400CFF881 /* Planet.swift */; };
@@ -44,10 +46,12 @@
 		1444AAF525ECE9800016ABE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1444AAF825ECE9800016ABE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1444AAFA25ECE9800016ABE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		147FB1CD25EE2D0C00CD5994 /* ApiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHelper.swift; sourceTree = "<group>"; };
+		147FB1D225EE2F5900CD5994 /* ApiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiData.swift; sourceTree = "<group>"; };
 		149E680625ECFA0F00440DE4 /* GeneralData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralData.swift; sourceTree = "<group>"; };
 		149E680925ECFF5E00440DE4 /* PeopleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleData.swift; sourceTree = "<group>"; };
 		149E680D25ECFFB700440DE4 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		14A3BCB725ED070C00CFF881 /* FilmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmData.swift; sourceTree = "<group>"; };
+		14A3BCB725ED070C00CFF881 /* FilmsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsData.swift; sourceTree = "<group>"; };
 		14A3BCBC25ED075C00CFF881 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		14A3BCC025ED07CE00CFF881 /* PlanetsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsData.swift; sourceTree = "<group>"; };
 		14A3BCC325ED07D400CFF881 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 		1444AAEB25ECE97D0016ABE3 /* PeoplePractice */ = {
 			isa = PBXGroup;
 			children = (
+				147FB1CC25EE2D0100CD5994 /* Helpers */,
 				14089B4825ECF6FB00549267 /* Model */,
 				14089B4725ECF6F100549267 /* View Controllers */,
 				1444AAEC25ECE97D0016ABE3 /* AppDelegate.swift */,
@@ -126,9 +131,18 @@
 			path = PeoplePractice;
 			sourceTree = "<group>";
 		};
+		147FB1CC25EE2D0100CD5994 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				147FB1CD25EE2D0C00CD5994 /* ApiHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		149E680525ECF9FF00440DE4 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				147FB1D225EE2F5900CD5994 /* ApiData.swift */,
 				14A3BCD425ED0C7100CFF881 /* Species */,
 				14A3BCC725ED09F000CFF881 /* Starships */,
 				14A3BCC625ED09E200CFF881 /* Vehicles */,
@@ -152,7 +166,7 @@
 		14A3BCB625ED06FF00CFF881 /* Films */ = {
 			isa = PBXGroup;
 			children = (
-				14A3BCB725ED070C00CFF881 /* FilmData.swift */,
+				14A3BCB725ED070C00CFF881 /* FilmsData.swift */,
 				14A3BCBC25ED075C00CFF881 /* Film.swift */,
 			);
 			path = Films;
@@ -179,8 +193,8 @@
 		14A3BCC725ED09F000CFF881 /* Starships */ = {
 			isa = PBXGroup;
 			children = (
-				14A3BCCE25ED0A2B00CFF881 /* Starship.swift */,
 				14A6888325EE1D18001FC37D /* StarshipsData.swift */,
+				14A3BCCE25ED0A2B00CFF881 /* Starship.swift */,
 			);
 			path = Starships;
 			sourceTree = "<group>";
@@ -329,6 +343,7 @@
 				149E680A25ECFF5E00440DE4 /* PeopleData.swift in Sources */,
 				14311BC625ED28A300946C4D /* DetailPersonViewController.swift in Sources */,
 				14A3BCD725ED0C8700CFF881 /* SpeciesData.swift in Sources */,
+				147FB1CE25EE2D0C00CD5994 /* ApiHelper.swift in Sources */,
 				1444AAF125ECE97D0016ABE3 /* ViewController.swift in Sources */,
 				14A3BCC425ED07D400CFF881 /* Planet.swift in Sources */,
 				14089B4E25ECF7D700549267 /* DataTableViewCell.swift in Sources */,
@@ -336,7 +351,7 @@
 				1444AAED25ECE97D0016ABE3 /* AppDelegate.swift in Sources */,
 				14A3BCD225ED0A3200CFF881 /* Vehicle.swift in Sources */,
 				14A3BCBD25ED075C00CFF881 /* Film.swift in Sources */,
-				14A3BCB825ED070C00CFF881 /* FilmData.swift in Sources */,
+				14A3BCB825ED070C00CFF881 /* FilmsData.swift in Sources */,
 				14A6888425EE1D18001FC37D /* StarshipsData.swift in Sources */,
 				149E680725ECFA0F00440DE4 /* GeneralData.swift in Sources */,
 				149E680E25ECFFB700440DE4 /* Person.swift in Sources */,
@@ -344,6 +359,7 @@
 				14A3BCC925ED09FF00CFF881 /* VehiclesData.swift in Sources */,
 				14A3BCDB25ED0D3300CFF881 /* Species.swift in Sources */,
 				14A3BCC125ED07CE00CFF881 /* PlanetsData.swift in Sources */,
+				147FB1D325EE2F5900CD5994 /* ApiData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

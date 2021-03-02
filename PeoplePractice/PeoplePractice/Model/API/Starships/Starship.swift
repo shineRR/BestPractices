@@ -6,45 +6,50 @@
 //
 
 import Foundation
+import ObjectMapper
 
-struct Starship: Decodable, Displayable {
-    let name: String
-    let model: String
-    let manufacturer: String
-    let cost: String
-    let length: String
-    let maxSpeed: String
-    let crew: String
-    let passengers: String
-    let cargoCapacity: String
-    let consumables: String
-    let hyperdriveRating: String
-    let MGLT: String
-    let starshipClass: String
-    let pilots: [String]
-    let films: [String]
-    let created: String
-    let edited: String
-    let url: String
+class Starship: Mappable {
+    var name: String?
+    var model: String?
+    var manufacturer: String?
+    var cost: String?
+    var length: String?
+    var maxSpeed: String?
+    var crew: String?
+    var passengers: String?
+    var cargoCapacity: String?
+    var consumables: String?
+    var hyperdriveRating: String?
+    var MGLT: String?
+    var starshipClass: String?
+    var pilots: [String]?
+    var films: [String]?
+    var created: String?
+    var edited: String?
+    var url: String?
     
-    enum CodingKeys: String, CodingKey {
-        case name
-        case model
-        case manufacturer
-        case cost = "cost_in_credits"
-        case length
-        case maxSpeed = "max_atmosphering_speed"
-        case crew
-        case passengers
-        case cargoCapacity = "cargo_capacity"
-        case consumables
-        case hyperdriveRating = "hyperdrive_rating"
-        case MGLT
-        case starshipClass = "starship_class"
-        case pilots
-        case films
-        case created
-        case edited
-        case url
+    required init?(map: Map) {
+        mapping(map: map)
+    }
+    
+    func mapping(map: Map) {
+        name <- map["name"]
+        model <- map["model"]
+        manufacturer <- map["manufacturer"]
+        cost <- map["cost"]
+        length <- map["length"]
+        maxSpeed <- map["max_atmosphering_speed"]
+        crew <- map["crew"]
+        passengers <- map["passengers"]
+        cargoCapacity <- map["cargo_capacity"]
+        consumables <- map["consumables"]
+        hyperdriveRating <- map["hyperdrive_rating"]
+        MGLT <- map["MGLT"]
+        starshipClass <- map["starship_class"]
+        pilots  <- map["pilots"]
+        films  <- map["films"]
+        created <- map["created"]
+        edited <- map["edited"]
+        url <- map["url"]
     }
 }

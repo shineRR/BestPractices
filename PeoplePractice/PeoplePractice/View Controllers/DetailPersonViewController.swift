@@ -20,13 +20,11 @@ class DetailPersonViewController: UIViewController {
     @IBOutlet weak var genderLabel: UILabel!
     
     private var person: Person?
-    var personDisplayable: Displayable?
+    var url: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        navigationItem.title = personDisplayable?.name
+    
         doRequest()
     }
     
@@ -42,13 +40,9 @@ class DetailPersonViewController: UIViewController {
     }
     
     func doRequest() {
-        guard let url = personDisplayable?.url else { return }
-        let request = AF.request(url)
-        
-        request.responseDecodable(of: Person.self) { (response) in
-            guard let data = response.value else { return }
-            
-            self.person = data
+        guard let url = url else { return }
+        ApiHelper().requestForPerson(url: url) { person in
+            self.person = person
             self.setupLabel()
         }
     }

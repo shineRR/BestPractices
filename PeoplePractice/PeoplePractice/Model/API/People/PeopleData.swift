@@ -6,27 +6,18 @@
 //
 
 import Foundation
-
-struct PeopleData: Decodable {
-    var count: Int
-    var next: String?
-    var previous: String?
-    var all: [Person]
+import ObjectMapper
+ 
+class PeopleData: ApiData {
     
-    enum CodingKeys: String, CodingKey {
-        case count = "count"
-        case next = "next"
-        case previous = "previous"
-        case all = "results"
-    }
-}
-
-extension PeopleData: NamebleStruct {
-    var structName: String {
-        return "People"
+    var results: [Person]?
+    
+    required init?(map: Map) {
+        results <- map["results"]
+        super.init(map: map, currentPageCount: results?.count)
     }
     
-    var pageCount: Int {
-        return all.count
+    required init?(map: Map, currentPageCount: Int?) {
+        fatalError("init(map:currentPageCount:) has not been implemented")
     }
 }
