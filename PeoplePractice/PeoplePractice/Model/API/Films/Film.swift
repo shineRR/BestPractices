@@ -9,6 +9,7 @@ import Foundation
 import ObjectMapper
 
 class Film: Mappable {
+    
     var id: Int?
     var title: String?
     var openingCrawl: String?

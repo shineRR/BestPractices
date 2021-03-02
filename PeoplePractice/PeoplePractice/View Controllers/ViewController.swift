@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     
     private let requestURL = "https://swapi.dev/api/"
     private var generalUrls: GeneralData?
-    private var canWind: Bool = false
     
     //  MARK: - Life cycle
     

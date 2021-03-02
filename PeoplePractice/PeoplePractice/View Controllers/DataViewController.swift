@@ -61,9 +61,9 @@ extension DataViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "dataCell") as! DataTableViewCell
         let model = headerTitles[indexPath.section]
+        
         cell.setupCell(model: model, index: indexPath.row)
         return cell
     }
@@ -71,11 +71,11 @@ extension DataViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
-        let dataFromCell = tableView.cellForRow(at: indexPath) as? DataTableViewCell
-        
-        guard let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "personPage") as? DetailPersonViewController else { return }
-        vc.url = dataFromCell?.url
-        vc.navigationItem.title = dataFromCell?.nameLabel.text
+
+        guard let dataFromCell = tableView.cellForRow(at: indexPath) as? DataTableViewCell,
+              let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "personPage") as? DetailPersonViewController else { return }
+        vc.url = dataFromCell.url
+        vc.navigationItem.title = dataFromCell.nameLabel.text
         navigationController?.pushViewController(vc, animated: true)
     }
 }

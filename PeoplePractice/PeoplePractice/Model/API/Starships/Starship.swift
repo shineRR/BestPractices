@@ -9,6 +9,7 @@ import Foundation
 import ObjectMapper
 
 class Starship: Mappable {
+    
     var name: String?
     var model: String?
     var manufacturer: String?

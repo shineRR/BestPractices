@@ -9,6 +9,7 @@ import Foundation
 import ObjectMapper
 
 class Vehicle: Mappable {
+    
     var name: String?
     var model: String?
     var manufacturer: String?
@@ -48,5 +49,4 @@ class Vehicle: Mappable {
         edited <- map["edited"]
         url <- map["url"]
     }
-    
 }

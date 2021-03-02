@@ -17,34 +17,34 @@ class DataTableViewCell: UITableViewCell {
         switch model.objectName {
         case "People":
             guard let peopleData = model as? PeopleData,
-                  let array = peopleData.results else { return }
-            url = array[index].url
-            self.nameLabel.text = array[index].name
+                  let people = peopleData.results else { return }
+            url = people[index].url
+            self.nameLabel.text = people[index].name
         case "Starships":
             guard let starshipsData = model as? StarshipsData,
-                  let array = starshipsData.results else { return }
-            self.nameLabel.text = array[index].name
-            url = array[index].url
+                  let starships = starshipsData.results else { return }
+            self.nameLabel.text = starships[index].name
+            url = starships[index].url
         case "Species":
             guard let speciesData = model as? SpeciesData,
-                  let array = speciesData.results else { return }
-            self.nameLabel.text = array[index].name
-            url = array[index].url
+                  let species = speciesData.results else { return }
+            self.nameLabel.text = species[index].name
+            url = species[index].url
         case "Films":
             guard let filmsData = model as? FilmsData,
-                  let array = filmsData.results else { return }
-            self.nameLabel.text = array[index].title
-            url = array[index].url
+                  let films = filmsData.results else { return }
+            self.nameLabel.text = films[index].title
+            url = films[index].url
         case "Planets":
             guard let planetsData = model as? PlanetsData,
-                  let array = planetsData.results else { return }
-            self.nameLabel.text = array[index].name
-            url = array[index].url
+                  let planets = planetsData.results else { return }
+            self.nameLabel.text = planets[index].name
+            url = planets[index].url
         case "Vehicles":
             guard let vehicleData = model as? VehiclesData,
-                  let array = vehicleData.results else { return }
-            self.nameLabel.text = array[index].name
-            url = array[index].url
+                  let vehicles = vehicleData.results else { return }
+            self.nameLabel.text = vehicles[index].name
+            url = vehicles[index].url
         default:
             self.nameLabel.text = "Name"
         }

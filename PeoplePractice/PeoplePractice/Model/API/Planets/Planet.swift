@@ -9,6 +9,7 @@ import Foundation
 import ObjectMapper
 
 class Planet: Mappable {
+    
     var name: String?
     var rotationPeriod: String?
     var orbitalPeriod: String?
