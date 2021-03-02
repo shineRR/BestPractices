@@ -9,7 +9,9 @@ import UIKit
 import Alamofire
 
 class DetailPersonViewController: UIViewController {
-
+    
+    //  MARK: - Vars
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var massLabel: UILabel!
@@ -22,13 +24,17 @@ class DetailPersonViewController: UIViewController {
     private var person: Person?
     var url: String?
     
+    //  MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
         doRequest()
     }
     
-    func setupLabel() {
+    //  MARK: - Functions
+    
+    private func setupLabel() {
         nameLabel.text = person?.name
         heightLabel.text = person?.height
         massLabel.text = person?.mass
@@ -39,7 +45,7 @@ class DetailPersonViewController: UIViewController {
         genderLabel.text = person?.gender
     }
     
-    func doRequest() {
+    private func doRequest() {
         guard let url = url else { return }
         ApiHelper().requestForPerson(url: url) { person in
             self.person = person

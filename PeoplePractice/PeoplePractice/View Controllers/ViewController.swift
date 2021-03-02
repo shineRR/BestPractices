@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 
 class ViewController: UIViewController {
+    
     //  MARK: - Vars
     
     @IBOutlet weak var downloadDataButton: UIButton!

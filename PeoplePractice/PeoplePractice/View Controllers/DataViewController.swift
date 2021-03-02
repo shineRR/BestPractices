@@ -10,6 +10,7 @@ import Alamofire
 import ObjectMapper
 
 class DataViewController: UIViewController {
+    
     //  MARK: - Vars
     
     @IBOutlet weak var tableView: UITableView!
@@ -44,6 +45,7 @@ class DataViewController: UIViewController {
         ApiHelper().parseApi(url: generalUrls?.species ?? "", of: SpeciesData.self, name: "Species", onSucess: closure)
     }
 }
+
 //  MARK: - Extension
 
 extension DataViewController: UITableViewDelegate, UITableViewDataSource {
