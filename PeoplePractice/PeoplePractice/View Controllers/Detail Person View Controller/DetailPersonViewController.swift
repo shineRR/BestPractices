@@ -36,12 +36,20 @@ extension DetailPersonViewController: UICollectionViewDataSource, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: width, height: 50)
+        
+        let value = personProperties[indexPath.row].value
+        let lines = value.components(separatedBy: "\n").count
+        let height: CGFloat = CGFloat(Double(lines) * 40 - (40 * Double(lines) * 0.4))
+        
+        
+        return CGSize(width: width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! DataitPersonCollectionViewCell
+        
+        
         
         cell.setupCell(property: personProperties[indexPath.row].property, value: personProperties[indexPath.row].value)
         
