@@ -12,6 +12,7 @@ class DetailPersonViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let width = UIScreen.main.bounds.width
+    private let defaultCellHeight = 60.0
     private let cellIdentifier = "DetailPersonCell"
     private var personProperties = [ModelProperty]()
     
@@ -39,8 +40,9 @@ extension DetailPersonViewController: UICollectionViewDataSource, UICollectionVi
         
         let value = personProperties[indexPath.row].value
         let lines = value.components(separatedBy: "\n").count
-        let height: CGFloat = CGFloat(Double(lines) * 40 - (40 * Double(lines) * 0.4))
-        
+        let coef = width < 400 ? 0.2 : 0.4
+        let error = CGFloat(lines > 1 ? Double(lines) * defaultCellHeight * coef : 0)
+        let height = CGFloat(Double(lines) * defaultCellHeight) - error
         
         return CGSize(width: width, height: height)
     }
@@ -48,8 +50,6 @@ extension DetailPersonViewController: UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! DataitPersonCollectionViewCell
-        
-        
         
         cell.setupCell(property: personProperties[indexPath.row].property, value: personProperties[indexPath.row].value)
         
