@@ -8,13 +8,12 @@
 import Foundation
 import ObjectMapper
 
-
-class Person: BaseMappableModel {
+class Person: BaseModel {
     
-    var map = Dictionary<String, Any>()
-    private let keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color",
-                        "birth_year", "gender", "homeworld", "films", "species", "vehicles", "starships", "created", "edited", "url"]
-    var name: String?
+    private let keys = ["name", "height", "mass", "hair_color",
+                        "skin_color", "eye_color", "birth_year", "gender",
+                        "homeworld", "films", "species", "vehicles",
+                        "starships", "created", "edited", "url"]
     var height: String?
     var mass: String?
     var hairColor: String?
@@ -27,13 +26,9 @@ class Person: BaseMappableModel {
     var species: [String]?
     var vehicles: [String]?
     var starships: [String]?
-    var created: String?
-    var edited: String?
-    var url: String?
     
     public override func mapping(map: Map) {
-        self.map = map.JSON
-        name <- map["name"]
+        super.mapping(map: map)
         height <- map["height"]
         mass <- map["mass"]
         hairColor <- map["hair_color"]
@@ -46,9 +41,6 @@ class Person: BaseMappableModel {
         species <- map["species"]
         vehicles <- map["vehicles"]
         starships <- map["starships"]
-        created <- map["created"]
-        edited <- map["edited"]
-        url <- map["url"]
     }
     
     override func getProperties() -> [ModelProperty] {

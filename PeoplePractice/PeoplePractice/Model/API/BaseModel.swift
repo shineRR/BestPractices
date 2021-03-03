@@ -34,6 +34,22 @@ public class BaseMappableModel: NSObject, Mappable {
         // override
         return [ModelProperty]()
     }
+}
+
+class BaseModel: BaseMappableModel {
     
+    var map = Dictionary<String, Any>()
+    var name: String?
+    var created: String?
+    var edited: String?
+    var url: String?
+    
+    override func mapping(map: Map) {
+        self.map = map.JSON
+        name <- map["name"]
+        created <- map["created"]
+        edited <- map["edited"]
+        url <- map["url"]
+    }
 }
 

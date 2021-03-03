@@ -15,8 +15,8 @@ class DataViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var headerTitles: [ApiData] = []
-    
+    private var listModels: [BaseModel] = []
+    private var sectionName: String?
     var generalUrls: GeneralData?
     
     //  MARK: - Life cycle
@@ -34,16 +34,14 @@ class DataViewController: UIViewController {
     //  MARK: - Functions
     
     private func fetchData() {
-        let closure: (_ obj: ApiData) -> () = { [weak self] obj in
-            self?.headerTitles.append(obj)
+        ApiHelper.parseApi(url: generalUrls?.people ?? "", of: PeopleData.self, name: "People", onSucess: { [weak self] obj in
+            if let model = obj as? PeopleData,
+               let results = model.results {
+                self?.sectionName = obj.object?.rawValue
+                self?.listModels = results
+            }
             self?.tableView.reloadData()
-        }
-        ApiHelper.parseApi(url: generalUrls?.people ?? "", of: PeopleData.self, name: "People", onSucess: closure)
-        ApiHelper.parseApi(url: generalUrls?.starships ?? "", of: StarshipsData.self, name: "Starships", onSucess: closure)
-        ApiHelper.parseApi(url: generalUrls?.films ?? "", of: FilmsData.self, name: "Films", onSucess: closure)
-        ApiHelper.parseApi(url: generalUrls?.planets ?? "", of: PlanetsData.self, name: "Planets", onSucess: closure)
-        ApiHelper.parseApi(url: generalUrls?.vehicles ?? "", of: VehiclesData.self, name: "Vehicles", onSucess: closure)
-        ApiHelper.parseApi(url: generalUrls?.species ?? "", of: SpeciesData.self, name: "Species", onSucess: closure)
+        })
     }
 }
 
@@ -51,23 +49,18 @@ class DataViewController: UIViewController {
 
 extension DataViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return headerTitles.count
-    }
-    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return headerTitles[section].object?.rawValue
+        return sectionName
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return headerTitles[section].currentPageCount ?? 0
+        return listModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! DataTableViewCell
-        let model = headerTitles[indexPath.section]
-        
-        cell.setupCell(model: model, index: indexPath.row)
+                
+        cell.setupCell(modelName: listModels[indexPath.row].name)
         return cell
     }
     
@@ -77,7 +70,7 @@ extension DataViewController: UITableViewDelegate, UITableViewDataSource {
         let vc = DetailPersonViewController(nibName: "DetailPersonViewController", bundle: nil)
         guard let dataFromCell = tableView.cellForRow(at: indexPath) as? DataTableViewCell else { return }
         
-        vc.url = dataFromCell.url
+        vc.person = listModels[indexPath.row] as? Person
         vc.navigationItem.title = dataFromCell.textLabel?.text
     
         navigationController?.pushViewController(vc, animated: true)

@@ -9,14 +9,13 @@ import UIKit
 
 class DetailPersonViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let width = UIScreen.main.bounds.width
     private let cellIdentifier = "DetailPersonCell"
-    private var person: Person?
     private var personProperties = [ModelProperty]()
-    var url: String?
+    
+    var person: Person?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,16 +24,8 @@ class DetailPersonViewController: UIViewController {
         collectionView.delegate = self
         
         collectionView.register(UINib(nibName: "DataitPersonCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
-        doRequest()
-    }
-    
-    private func doRequest() {
-        guard let url = url else { return }
-        ApiHelper.requestForPerson(url: url) { person in
-            self.person = person
-            self.personProperties = person.getProperties()
-            self.collectionView.reloadData()
-        }
+        personProperties = person?.getProperties() ?? []
+        collectionView.reloadData()
     }
 }
 
