@@ -32,6 +32,9 @@
                     <state key="normal" title="Download">
                         <color key="titleColor" systemColor="systemPinkColor"/>
                     </state>
+                    <connections>
+                        <action selector="downloadTapped:" destination="-1" eventType="touchUpInside" id="MMZ-Xo-GrP"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

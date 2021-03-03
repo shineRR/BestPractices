@@ -9,28 +9,25 @@ import Foundation
 import ObjectMapper
 
 enum ModelTypes: String, CaseIterable {
-    case people = "People", starships = "Starships", species = "Species", films = "Films", planets = "Planets", vehicles = "Vehicles"
+    case people = "People", starships = "Starships", species = "Species", films = "Films", planets = "Planets", vehicles = "Vehicles", wrong = "wrong"
 }
 
-class ApiData: Mappable  {
+class ApiData: BaseMappableModel  {
     var object: ModelTypes?
     var count: Int?
     var next: String?
     var previous: String?
     var currentPageCount: Int?
     
-    required init?(map: Map) {
-        mapping(map: map)
+    static subscript(model: ApiData) -> ModelTypes {
+        return ModelTypes.allCases.first(where: { $0 == model.object }) ?? .wrong
     }
     
-    required init?(map: Map, currentPageCount: Int?) {
-        self.currentPageCount = currentPageCount
-    }
-    
-    func mapping(map: Map) {
+    override func mapping(map: Map, items: Int) {
         object <- map["objectName"]
         count <- map["count"]
         next <- map["next"]
         previous <- map["previous"]
+        self.currentPageCount = items
     }
 }

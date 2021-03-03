@@ -8,7 +8,7 @@
 import Foundation
 import ObjectMapper
 
-class Person: Mappable {
+class Person: BaseMappableModel {
     var name: String?
     var height: String?
     var mass: String?
@@ -26,11 +26,7 @@ class Person: Mappable {
     var edited: String?
     var url: String?
     
-    required init?(map: Map) {
-        mapping(map: map)
-    }
-    
-    func mapping(map: Map) {
+    public override func mapping(map: Map) {
         name <- map["name"]
         height <- map["height"]
         mass <- map["mass"]

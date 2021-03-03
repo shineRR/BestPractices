@@ -11,12 +11,8 @@ import ObjectMapper
 class PlanetsData: ApiData {
     var results: [Planet]?
     
-    required init?(map: Map) {
+    override func mapping(map: Map) {
         results <- map["results"]
-        super.init(map: map, currentPageCount: results?.count)
-    }
-    
-    required init?(map: Map, currentPageCount: Int?) {
-        fatalError("init(map:currentPageCount:) has not been implemented")
+        super.mapping(map: map, items: results?.count ?? 0)
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 import ObjectMapper
 
-class Vehicle: Mappable {
+class Vehicle: BaseMappableModel {
     
     var name: String?
     var model: String?
@@ -27,11 +27,7 @@ class Vehicle: Mappable {
     var edited: String?
     var url: String?
     
-    required init?(map: Map) {
-        mapping(map: map)
-    }
-    
-    func mapping(map: Map) {
+    public override func mapping(map: Map) {
         name <- map["name"]
         model <- map["model"]
         manufacturer <- map["manufacturer"]

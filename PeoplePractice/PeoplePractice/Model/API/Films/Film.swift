@@ -8,7 +8,7 @@
 import Foundation
 import ObjectMapper
 
-class Film: Mappable {
+class Film: BaseMappableModel {
     
     var id: Int?
     var title: String?
@@ -19,11 +19,7 @@ class Film: Mappable {
     var starships: [String]?
     var url: String?
     
-    required init?(map: Map) {
-        mapping(map: map)
-    }
-    
-    func mapping(map: Map) {
+    public override func mapping(map: Map) {
         id <- map["episode_id"]
         title <- map["title"]
         openingCrawl <- map["opening_crawl"]

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0716D264B238CA77C4D202C5 /* Pods_PeoplePractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18A527A981690E32E4E3F07 /* Pods_PeoplePractice.framework */; };
 		14089B4E25ECF7D700549267 /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14089B4D25ECF7D700549267 /* DataTableViewCell.swift */; };
+		14413B4E25EF6670008AB70E /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14413B4D25EF6670008AB70E /* BaseModel.swift */; };
 		1444AAED25ECE97D0016ABE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444AAEC25ECE97D0016ABE3 /* AppDelegate.swift */; };
 		1444AAEF25ECE97D0016ABE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444AAEE25ECE97D0016ABE3 /* SceneDelegate.swift */; };
 		1444AAF625ECE9800016ABE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1444AAF525ECE9800016ABE3 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		14089B4D25ECF7D700549267 /* DataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
+		14413B4D25EF6670008AB70E /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		1444AAE925ECE97D0016ABE3 /* PeoplePractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeoplePractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1444AAEC25ECE97D0016ABE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1444AAEE25ECE97D0016ABE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				147FB1D225EE2F5900CD5994 /* ApiData.swift */,
+				14413B4D25EF6670008AB70E /* BaseModel.swift */,
 				14A3BCD425ED0C7100CFF881 /* Species */,
 				14A3BCC725ED09F000CFF881 /* Starships */,
 				14A3BCC625ED09E200CFF881 /* Vehicles */,
@@ -377,6 +380,7 @@
 			files = (
 				149E680A25ECFF5E00440DE4 /* PeopleData.swift in Sources */,
 				14A3BCD725ED0C8700CFF881 /* SpeciesData.swift in Sources */,
+				14413B4E25EF6670008AB70E /* BaseModel.swift in Sources */,
 				14FDCA5625EE7F8500FEB72E /* DataViewController.swift in Sources */,
 				147FB1CE25EE2D0C00CD5994 /* ApiHelper.swift in Sources */,
 				14A3BCC425ED07D400CFF881 /* Planet.swift in Sources */,

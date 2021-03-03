@@ -8,7 +8,7 @@
 import Foundation
 import ObjectMapper
 
-class Species: Mappable {
+class Species: BaseMappableModel {
     
     var name: String?
     var currentPageCount: Int?
@@ -26,12 +26,8 @@ class Species: Mappable {
     var created: String?
     var edited: String?
     var url: String?
-    
-    required init?(map: Map) {
-        mapping(map: map)
-    }
-    
-    func mapping(map: Map) {
+
+    override func mapping(map: Map) {
         name <- map["name"]
         classification <- map["classification"]
         designation <- map["designation"]

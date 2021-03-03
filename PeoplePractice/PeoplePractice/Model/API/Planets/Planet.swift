@@ -8,7 +8,7 @@
 import Foundation
 import ObjectMapper
 
-class Planet: Mappable {
+class Planet: BaseMappableModel {
     
     var name: String?
     var rotationPeriod: String?
@@ -24,12 +24,8 @@ class Planet: Mappable {
     var created: String?
     var edited: String?
     var url: String?
-    
-    required init?(map: Map) {
-        mapping(map: map)
-    }
-    
-    func mapping(map: Map) {
+
+    public override func mapping(map: Map) {
         name <- map["name"]
         rotationPeriod <- map["rotation_period"]
         orbitalPeriod <- map["orbital_period"]

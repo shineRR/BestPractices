@@ -12,7 +12,7 @@ class DataTableViewCell: UITableViewCell {
     var url: String?
     
     func setupCell(model: ApiData, index: Int) {
-        switch model.object {
+        switch ApiData[model] {
         case .people:
             guard let peopleData = model as? PeopleData,
                   let people = peopleData.results else { return }
