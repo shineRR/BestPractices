@@ -7,8 +7,6 @@
 
 import UIKit
 
-//fileprivate let privateIdentifier = "TableViewCell"
-
 class DetailPersonViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!

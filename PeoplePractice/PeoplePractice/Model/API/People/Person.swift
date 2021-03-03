@@ -8,12 +8,6 @@
 import Foundation
 import ObjectMapper
 
-struct ModelProperty {
-
-    var property: String
-    var value: String
-}
-
 
 class Person: BaseMappableModel {
     

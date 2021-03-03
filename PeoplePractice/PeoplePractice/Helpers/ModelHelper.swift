@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct ModelProperty {
+    var property: String
+    var value: String
+}
+
 class ModelHelper {
     static func getProperties(keys: [String], dict: Dictionary<String, Any>) -> [ModelProperty] {
         
