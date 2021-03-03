@@ -12,50 +12,50 @@ import UIKit
 class DetailPersonViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
+    private let width = UIScreen.main.bounds.width
+    private let cellIdentifier = "DetailPersonCell"
     private var person: Person?
+    private var personProperties = [PersonProperty]()
     var url: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        tableView.dataSource = self
-        tableView.delegate = self
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "YourCell")
+        collectionView.register(UINib(nibName: "DataitPersonCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
         doRequest()
     }
-    
-//    private func setupLabel() {
-//        nameLabel.text = person?.name
-//        heightLabel.text = person?.height
-//        massLabel.text = person?.mass
-//        hairColorLabel.text = person?.hairColor
-//        skinColorLabel.text = person?.skinColor
-//        eyeColorLabel.text = person?.eyeColor
-//        birthYearLabel.text = person?.birthYear
-//        genderLabel.text = person?.gender
-//    }
     
     private func doRequest() {
         guard let url = url else { return }
         ApiHelper.requestForPerson(url: url) { person in
             self.person = person
-//            self.setupLabel()
+            self.personProperties = person.getArray()
+            self.collectionView.reloadData()
         }
     }
 }
 
-extension DetailPersonViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
+extension DetailPersonViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return personProperties.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "YourCell", for: indexPath)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: width, height: 50)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! DataitPersonCollectionViewCell
+        
+        cell.setupCell(property: personProperties[indexPath.row].property, value: personProperties[indexPath.row].value)
         
         return cell
     }
-    
-    
 }

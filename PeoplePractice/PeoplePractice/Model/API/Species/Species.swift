@@ -7,11 +7,10 @@
 
 import Foundation
 import ObjectMapper
-
+// вот тут бы я создал общий класс для всех данных
 class Species: BaseMappableModel {
     
     var name: String?
-    var currentPageCount: Int?
     var classification: String?
     var designation: String?
     var avgHeight: String?
@@ -23,6 +22,10 @@ class Species: BaseMappableModel {
     var language: String?
     var people: [String]?
     var films: [String]?
+    
+    // сделать переменную по типу
+    var newFilms: [Film] = [] // и вот так каждый массив будет иметь свой класс и мы будем обращаться к главное модели и брать у него данные (если возможно)
+    
     var created: String?
     var edited: String?
     var url: String?

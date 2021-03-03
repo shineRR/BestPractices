@@ -8,7 +8,18 @@
 import Foundation
 import ObjectMapper
 
+struct PersonProperty {
+
+    var property: String
+    var value: String
+}
+
+
 class Person: BaseMappableModel {
+    
+    var map = Dictionary<String, Any>()
+    private let keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color",
+                        "birth_year", "gender", "homeworld", "films", "species", "vehicles", "starships", "created", "edited", "url"]
     var name: String?
     var height: String?
     var mass: String?
@@ -27,6 +38,7 @@ class Person: BaseMappableModel {
     var url: String?
     
     public override func mapping(map: Map) {
+        self.map = map.JSON
         name <- map["name"]
         height <- map["height"]
         mass <- map["mass"]
@@ -43,5 +55,16 @@ class Person: BaseMappableModel {
         created <- map["created"]
         edited <- map["edited"]
         url <- map["url"]
+    }
+    
+    func getArray() -> [PersonProperty] {
+        
+        var properties = [PersonProperty]()
+        for key in keys {
+            if let value = map[key] as? String, !value.isEmpty {
+                properties.append(PersonProperty(property: key, value: value))
+            }
+        }
+        return properties
     }
 }

@@ -10,6 +10,8 @@
 		0716D264B238CA77C4D202C5 /* Pods_PeoplePractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18A527A981690E32E4E3F07 /* Pods_PeoplePractice.framework */; };
 		14089B4E25ECF7D700549267 /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14089B4D25ECF7D700549267 /* DataTableViewCell.swift */; };
 		14413B4E25EF6670008AB70E /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14413B4D25EF6670008AB70E /* BaseModel.swift */; };
+		14413B5525EF7F96008AB70E /* DataitPersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14413B5325EF7F96008AB70E /* DataitPersonCollectionViewCell.swift */; };
+		14413B5625EF7F96008AB70E /* DataitPersonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14413B5425EF7F96008AB70E /* DataitPersonCollectionViewCell.xib */; };
 		1444AAED25ECE97D0016ABE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444AAEC25ECE97D0016ABE3 /* AppDelegate.swift */; };
 		1444AAEF25ECE97D0016ABE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444AAEE25ECE97D0016ABE3 /* SceneDelegate.swift */; };
 		1444AAF625ECE9800016ABE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1444AAF525ECE9800016ABE3 /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		14089B4D25ECF7D700549267 /* DataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
 		14413B4D25EF6670008AB70E /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		14413B5325EF7F96008AB70E /* DataitPersonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataitPersonCollectionViewCell.swift; sourceTree = "<group>"; };
+		14413B5425EF7F96008AB70E /* DataitPersonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataitPersonCollectionViewCell.xib; sourceTree = "<group>"; };
 		1444AAE925ECE97D0016ABE3 /* PeoplePractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeoplePractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1444AAEC25ECE97D0016ABE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1444AAEE25ECE97D0016ABE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,10 +103,20 @@
 		14089B4825ECF6FB00549267 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				14413B5225EF7F68008AB70E /* Datail Person Cell */,
 				149E680525ECF9FF00440DE4 /* API */,
 				14089B4D25ECF7D700549267 /* DataTableViewCell.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		14413B5225EF7F68008AB70E /* Datail Person Cell */ = {
+			isa = PBXGroup;
+			children = (
+				14413B5325EF7F96008AB70E /* DataitPersonCollectionViewCell.swift */,
+				14413B5425EF7F96008AB70E /* DataitPersonCollectionViewCell.xib */,
+			);
+			path = "Datail Person Cell";
 			sourceTree = "<group>";
 		};
 		1444AAE025ECE97D0016ABE3 = {
@@ -151,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				147FB1D225EE2F5900CD5994 /* ApiData.swift */,
+				149E680625ECFA0F00440DE4 /* GeneralData.swift */,
 				14413B4D25EF6670008AB70E /* BaseModel.swift */,
 				14A3BCD425ED0C7100CFF881 /* Species */,
 				14A3BCC725ED09F000CFF881 /* Starships */,
@@ -158,7 +173,6 @@
 				14A3BCBB25ED072000CFF881 /* Planets */,
 				14A3BCB625ED06FF00CFF881 /* Films */,
 				149E680C25ECFF9E00440DE4 /* People */,
-				149E680625ECFA0F00440DE4 /* GeneralData.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -323,6 +337,7 @@
 				14C6CFEF25EE775A006FA31F /* DetailPersonViewController.xib in Resources */,
 				14FDCA5725EE7F8500FEB72E /* DataViewController.xib in Resources */,
 				1444AAF925ECE9800016ABE3 /* LaunchScreen.storyboard in Resources */,
+				14413B5625EF7F96008AB70E /* DataitPersonCollectionViewCell.xib in Resources */,
 				14D59C3625EE8A4C006590E3 /* Main.storyboard in Resources */,
 				1444AAF625ECE9800016ABE3 /* Assets.xcassets in Resources */,
 				14FDCA6025EE82A300FEB72E /* ViewController.xib in Resources */,
@@ -382,6 +397,7 @@
 				14A3BCD725ED0C8700CFF881 /* SpeciesData.swift in Sources */,
 				14413B4E25EF6670008AB70E /* BaseModel.swift in Sources */,
 				14FDCA5625EE7F8500FEB72E /* DataViewController.swift in Sources */,
+				14413B5525EF7F96008AB70E /* DataitPersonCollectionViewCell.swift in Sources */,
 				147FB1CE25EE2D0C00CD5994 /* ApiHelper.swift in Sources */,
 				14A3BCC425ED07D400CFF881 /* Planet.swift in Sources */,
 				14FDCA5F25EE82A300FEB72E /* ViewController.swift in Sources */,
