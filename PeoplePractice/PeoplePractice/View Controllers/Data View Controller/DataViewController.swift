@@ -18,6 +18,7 @@ class DataViewController: UIViewController {
     private var entireModel: ApiData?
     private var listModels: [BaseModel] = []
     private var sectionName: String?
+    private var isLoading: Bool = true
     var generalUrls: GeneralData?
     
     //  MARK: - Life cycle
@@ -36,13 +37,16 @@ class DataViewController: UIViewController {
     
     private func fetchData(url: String) {
         ApiHelper.parseApi(url: url, of: PeopleData.self, name: "People", onSucess: { [weak self] obj in
-            if let model = obj as? PeopleData,
-               let results = model.results {
-                self?.entireModel = obj
-                self?.sectionName = obj.object?.rawValue
-                self?.listModels += results
+            DispatchQueue.main.async {
+                if let model = obj as? PeopleData,
+                   let results = model.results {
+                    self?.entireModel = obj
+                    self?.sectionName = obj.object?.rawValue
+                    self?.listModels += results
+                }
+                self?.tableView.reloadData()
+                self?.isLoading = false
             }
-            self?.tableView.reloadData()
         })
     }
 }
@@ -60,19 +64,18 @@ extension DataViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func loadMoreData() {
-        guard let url = entireModel?.next else {
-            return
-        }
-
-        DispatchQueue.main.async {
-            self.fetchData(url: url)
-        }
+        guard let url = entireModel?.next, !isLoading else { return }
+        
+        isLoading = true
+        fetchData(url: url)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == (listModels.count - 1) {
-            loadMoreData()
+            DispatchQueue.global().async {
+                self.loadMoreData()
+            }
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! DataTableViewCell
