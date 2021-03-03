@@ -13,7 +13,7 @@ class ModelHelper {
         var properties = [ModelProperty]()
         for key in keys {
             if let value = dict[key] as? String, !value.isEmpty {
-                properties.append(ModelProperty(property: key, value: value))
+                properties.append(ModelProperty(property: key.normalize(), value: value))
             }
         }
         return properties

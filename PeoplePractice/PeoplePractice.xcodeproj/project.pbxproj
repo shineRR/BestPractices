@@ -13,6 +13,7 @@
 		14413B5525EF7F96008AB70E /* DataitPersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14413B5325EF7F96008AB70E /* DataitPersonCollectionViewCell.swift */; };
 		14413B5625EF7F96008AB70E /* DataitPersonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14413B5425EF7F96008AB70E /* DataitPersonCollectionViewCell.xib */; };
 		14413B6025EF90DA008AB70E /* ModelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14413B5F25EF90DA008AB70E /* ModelHelper.swift */; };
+		14413B6425EF935F008AB70E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14413B6325EF935F008AB70E /* StringExtension.swift */; };
 		1444AAED25ECE97D0016ABE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444AAEC25ECE97D0016ABE3 /* AppDelegate.swift */; };
 		1444AAEF25ECE97D0016ABE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444AAEE25ECE97D0016ABE3 /* SceneDelegate.swift */; };
 		1444AAF625ECE9800016ABE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1444AAF525ECE9800016ABE3 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		14413B5325EF7F96008AB70E /* DataitPersonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataitPersonCollectionViewCell.swift; sourceTree = "<group>"; };
 		14413B5425EF7F96008AB70E /* DataitPersonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataitPersonCollectionViewCell.xib; sourceTree = "<group>"; };
 		14413B5F25EF90DA008AB70E /* ModelHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelHelper.swift; sourceTree = "<group>"; };
+		14413B6325EF935F008AB70E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		1444AAE925ECE97D0016ABE3 /* PeoplePractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeoplePractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1444AAEC25ECE97D0016ABE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1444AAEE25ECE97D0016ABE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,14 @@
 			path = "Datail Person Cell";
 			sourceTree = "<group>";
 		};
+		14413B6225EF9351008AB70E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				14413B6325EF935F008AB70E /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		1444AAE025ECE97D0016ABE3 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +152,7 @@
 		1444AAEB25ECE97D0016ABE3 /* PeoplePractice */ = {
 			isa = PBXGroup;
 			children = (
+				14413B6225EF9351008AB70E /* Extensions */,
 				147FB1CC25EE2D0100CD5994 /* Helpers */,
 				14089B4825ECF6FB00549267 /* Model */,
 				14089B4725ECF6F100549267 /* View Controllers */,
@@ -403,6 +414,7 @@
 				14413B5525EF7F96008AB70E /* DataitPersonCollectionViewCell.swift in Sources */,
 				147FB1CE25EE2D0C00CD5994 /* ApiHelper.swift in Sources */,
 				14A3BCC425ED07D400CFF881 /* Planet.swift in Sources */,
+				14413B6425EF935F008AB70E /* StringExtension.swift in Sources */,
 				14FDCA5F25EE82A300FEB72E /* ViewController.swift in Sources */,
 				14089B4E25ECF7D700549267 /* DataTableViewCell.swift in Sources */,
 				14C6CFEE25EE775A006FA31F /* DetailPersonViewController.swift in Sources */,
