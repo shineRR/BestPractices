@@ -17,7 +17,7 @@ class DetailPersonViewController: UIViewController {
     private let width = UIScreen.main.bounds.width
     private let cellIdentifier = "DetailPersonCell"
     private var person: Person?
-    private var personProperties = [PersonProperty]()
+    private var personProperties = [ModelProperty]()
     var url: String?
     
     override func viewDidLoad() {
@@ -34,7 +34,7 @@ class DetailPersonViewController: UIViewController {
         guard let url = url else { return }
         ApiHelper.requestForPerson(url: url) { person in
             self.person = person
-            self.personProperties = person.getArray()
+            self.personProperties = person.getProperties()
             self.collectionView.reloadData()
         }
     }

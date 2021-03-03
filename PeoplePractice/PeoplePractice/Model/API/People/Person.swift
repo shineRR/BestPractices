@@ -8,7 +8,7 @@
 import Foundation
 import ObjectMapper
 
-struct PersonProperty {
+struct ModelProperty {
 
     var property: String
     var value: String
@@ -57,14 +57,7 @@ class Person: BaseMappableModel {
         url <- map["url"]
     }
     
-    func getArray() -> [PersonProperty] {
-        
-        var properties = [PersonProperty]()
-        for key in keys {
-            if let value = map[key] as? String, !value.isEmpty {
-                properties.append(PersonProperty(property: key, value: value))
-            }
-        }
-        return properties
+    override func getProperties() -> [ModelProperty] {
+        return ModelHelper.getProperties(keys: keys, dict: map)
     }
 }

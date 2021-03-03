@@ -30,5 +30,10 @@ public class BaseMappableModel: NSObject, Mappable {
         // override
     }
     
+    func getProperties() -> [ModelProperty] {
+        // override
+        return [ModelProperty]()
+    }
+    
 }
 
