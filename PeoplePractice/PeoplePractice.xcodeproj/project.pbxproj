@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0716D264B238CA77C4D202C5 /* Pods_PeoplePractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18A527A981690E32E4E3F07 /* Pods_PeoplePractice.framework */; };
+		1401BDC225F0D57500D89D71 /* ForwardableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1401BDC125F0D57500D89D71 /* ForwardableButton.swift */; };
 		14089B4E25ECF7D700549267 /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14089B4D25ECF7D700549267 /* DataTableViewCell.swift */; };
 		14413B4E25EF6670008AB70E /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14413B4D25EF6670008AB70E /* BaseModel.swift */; };
 		14413B5525EF7F96008AB70E /* DataitPersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14413B5325EF7F96008AB70E /* DataitPersonCollectionViewCell.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1401BDC125F0D57500D89D71 /* ForwardableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardableButton.swift; sourceTree = "<group>"; };
 		14089B4D25ECF7D700549267 /* DataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
 		14413B4D25EF6670008AB70E /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		14413B5325EF7F96008AB70E /* DataitPersonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataitPersonCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1401BDBF25F0D48100D89D71 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				1401BDC125F0D57500D89D71 /* ForwardableButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		14089B4725ECF6F100549267 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +117,7 @@
 		14089B4825ECF6FB00549267 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1401BDBF25F0D48100D89D71 /* Button */,
 				14413B5225EF7F68008AB70E /* Datail Person Cell */,
 				149E680525ECF9FF00440DE4 /* API */,
 				14089B4D25ECF7D700549267 /* DataTableViewCell.swift */,
@@ -422,6 +433,7 @@
 				1444AAED25ECE97D0016ABE3 /* AppDelegate.swift in Sources */,
 				14A3BCD225ED0A3200CFF881 /* Vehicle.swift in Sources */,
 				14A3BCBD25ED075C00CFF881 /* Film.swift in Sources */,
+				1401BDC225F0D57500D89D71 /* ForwardableButton.swift in Sources */,
 				14A3BCB825ED070C00CFF881 /* FilmsData.swift in Sources */,
 				14A6888425EE1D18001FC37D /* StarshipsData.swift in Sources */,
 				149E680725ECFA0F00440DE4 /* GeneralData.swift in Sources */,

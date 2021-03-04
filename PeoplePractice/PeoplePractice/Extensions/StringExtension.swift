@@ -6,10 +6,19 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
     func normalize() -> String {
         let result = self.replacingOccurrences(of: "_", with: " ")
         return result.capitalized
     }
+    
+    func isValidURL() -> Bool {
+        if let url = NSURL(string: self) {
+            return UIApplication.shared.canOpenURL(url as URL)
+        }
+        return false
+    }
+    
 }
