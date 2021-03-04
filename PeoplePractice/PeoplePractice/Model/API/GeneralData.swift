@@ -7,16 +7,6 @@
 
 import Foundation
 
-protocol NamebleStruct {
-    var structName: String { get }
-    var pageCount: Int { get }
-}
-
-protocol Displayable {
-    var name: String { get }
-    var url: String { get }
-}
-
 struct GeneralData: Decodable {
     var films: String
     var people: String

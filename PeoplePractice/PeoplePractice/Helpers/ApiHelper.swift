@@ -43,7 +43,8 @@ class ApiHelper {
         }
     }
     
-    static func parseApi<T: Mappable>(url: String, of: T.Type, name: String, onSucess: @escaping (_ obj: ApiData) -> ()) {
+    static func parseApi<T: Mappable>(url: String, of: T.Type, name: String,
+                                      onSucess: @escaping (_ obj: ApiData) -> ()) {
         let request = AF.request(url)
         request.responseJSON { (response) in
             guard var data = response.value as? [String: Any] else { return }

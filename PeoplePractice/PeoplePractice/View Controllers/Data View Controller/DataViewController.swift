@@ -35,7 +35,8 @@ class DataViewController: UIViewController {
     //  MARK: - Functions
     
     private func fetchData() {
-        ApiHelper.parseApi(url: generalUrls?.people ?? "", of: PeopleData.self, name: "People", onSucess: { [weak self] obj in
+        ApiHelper.parseApi(url: generalUrls?.people ?? "", of: PeopleData.self,
+                           name: "People", onSucess: { [weak self] obj in
             if let model = obj as? PeopleData,
                let results = model.results {
                 self?.sectionName = obj.object?.rawValue

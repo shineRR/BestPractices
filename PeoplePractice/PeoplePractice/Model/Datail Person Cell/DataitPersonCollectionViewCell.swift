@@ -37,8 +37,8 @@ class DataitPersonCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupLink(link: String, minYOffset: CGFloat, vc: DetailPersonViewController, i: Int) {
-        ForwardableButton().setupButton(link: link, minYOffset: minYOffset, minX: valueLabel.frame.minX,
-                                        view: self.contentView, vc: vc, onSucess: { [weak self] button in
+        ForwardableButton().setupButton(link: link, minYOffset: minYOffset, minX: valueLabel.frame.minX, view: self.contentView, vc: vc, onSucess: { [weak self] button in
+            
             button.setTitle("Link #\(i)", for: .normal)
             self?.addSubview(button)
             self?.personalSubviews.append(button)

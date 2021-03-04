@@ -53,7 +53,8 @@ extension DetailPersonViewController: UICollectionViewDataSource, UICollectionVi
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! DataitPersonCollectionViewCell
         
-        cell.setupCell(property: modelProperties[indexPath.row].property, value: modelProperties[indexPath.row].value, vc: self)
+        cell.setupCell(property: modelProperties[indexPath.row].property,
+                       value: modelProperties[indexPath.row].value, vc: self)
         
         return cell
     }
