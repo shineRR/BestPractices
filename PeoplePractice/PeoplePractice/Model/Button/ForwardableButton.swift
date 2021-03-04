@@ -26,7 +26,6 @@ class ForwardableButton: UIButton {
             let width = view.frame.maxX - minX
             self.frame = CGRect(x: minX, y: view.frame.minY + minYOffset, width: width - 20, height: 25)
             addTarget(self, action: #selector(navigateToNextModel), for: .touchUpInside)
-            setTitle("Link #", for: .normal)
             self.url = url
             onSucess(self)
         } else {
