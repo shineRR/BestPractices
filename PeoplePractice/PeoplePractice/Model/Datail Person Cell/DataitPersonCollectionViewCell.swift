@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import SwiftDate
 
 enum CellType: Int, CaseIterable {
     case def = 1,
@@ -41,7 +42,12 @@ class DataitPersonCollectionViewCell: UICollectionViewCell {
             self?.personalSubviews.append(button)
             self?.valueLabel.text = ""
         }, onError: {
-            self.valueLabel.text = link
+            let date = link.toDate()
+            guard let time = date?.toFormat("dd.MM.yyyy") else {
+                self.valueLabel.text = link
+                return
+            }
+            self.valueLabel.text = time
         })
     }
     

@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (5.4.1)
   - ObjectMapper (4.2.0)
+  - SwiftDate (6.3.1)
 
 DEPENDENCIES:
   - Alamofire
   - ObjectMapper
+  - SwiftDate
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - ObjectMapper
+    - SwiftDate
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  SwiftDate: 72d28954e8e1c6c1c0f917ccc8005e4f83c7d4b2
 
-PODFILE CHECKSUM: ffbe49b6cdc5662a88b6eea226d29fabe31b34f9
+PODFILE CHECKSUM: e90e74a711d081ba9582c218d4b4901b19b52b7d
 
 COCOAPODS: 1.10.1
