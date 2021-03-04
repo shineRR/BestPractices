@@ -31,7 +31,7 @@ class ApiHelper {
                 classData = Species(JSON: data)
             case .starships:
                 classData = Starship(JSON: data)
-            case .vehicles :
+            case .vehicles:
                 classData = Vehicle(JSON: data)
             default:
                 break

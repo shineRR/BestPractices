@@ -37,8 +37,7 @@ class DataitPersonCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupLink(link: String, minYOffset: CGFloat, vc: DetailPersonViewController, i: Int) {
-        ForwardableButton().setupButton(link: link, minYOffset: minYOffset, minX: valueLabel.frame.minX, view: self.contentView, vc: vc, onSucess: { [weak self] button in
-            
+        ForwardableButton().setupButton(link: link, minYOffset: minYOffset, minX: valueLabel.frame.minX + 20, view: self.contentView, vc: vc, onSucess: { [weak self] button in
             button.setTitle("Link #\(i)", for: .normal)
             self?.addSubview(button)
             self?.personalSubviews.append(button)
@@ -63,7 +62,7 @@ class DataitPersonCollectionViewCell: UICollectionViewCell {
         
         switch CellType[links.count] {
         case .forwardable:
-            let step = self.frame.height / CGFloat(links.count) - 5
+            let step = self.frame.height / CGFloat(links.count) + 5
             var minYOffset: CGFloat = 10.0
             for (i, link) in links.enumerated() {
                 setupLink(link: link, minYOffset: minYOffset, vc: vc, i: i + 1)

@@ -19,12 +19,19 @@ class ForwardableButton: UIButton {
         vc.navigateToNextModel(url: url)
     }
     
+    private func setupUI() {
+        backgroundColor = .gray
+        backgroundColor = UIColor(red: 122 / 255, green: 122 / 255, blue: 122 / 255, alpha: 0.4)
+        layer.cornerRadius = 20
+    }
+    
     func setupButton(link: String, minYOffset: CGFloat, minX: CGFloat, view: UIView, vc: DetailPersonViewController, onSucess: @escaping (_ button: ForwardableButton) -> (), onError: @escaping () -> ()) {
         let url = link.replacingOccurrences(of: " ", with: "")
         if url.isValidURL() {
             self.vc = vc
             let width = view.frame.maxX - minX
             self.frame = CGRect(x: minX, y: view.frame.minY + minYOffset, width: width - 20, height: 25)
+            setupUI()
             addTarget(self, action: #selector(navigateToNextModel), for: .touchUpInside)
             self.url = url
             onSucess(self)
