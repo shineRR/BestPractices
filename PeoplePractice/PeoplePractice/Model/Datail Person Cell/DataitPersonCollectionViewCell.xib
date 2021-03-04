@@ -23,8 +23,9 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35i-VB-5Df">
-                        <rect key="frame" x="101" y="56" width="42" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35i-VB-5Df">
+                        <rect key="frame" x="101" y="5" width="283" height="122"/>
+                        <string key="text">ValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValueValue</string>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -36,6 +37,7 @@
             <constraints>
                 <constraint firstItem="35i-VB-5Df" firstAttribute="leading" secondItem="BOi-Zq-Zim" secondAttribute="trailing" constant="10" id="7jB-Pc-Xjx"/>
                 <constraint firstItem="BOi-Zq-Zim" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="9bv-YL-icI"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="35i-VB-5Df" secondAttribute="trailing" constant="20" id="Cma-lr-wxl"/>
                 <constraint firstItem="BOi-Zq-Zim" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="Cp6-Ke-HWK"/>
                 <constraint firstItem="35i-VB-5Df" firstAttribute="centerY" secondItem="BOi-Zq-Zim" secondAttribute="centerY" id="yO3-sk-zSe"/>
             </constraints>

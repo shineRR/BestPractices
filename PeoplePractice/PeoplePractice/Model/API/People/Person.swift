@@ -23,6 +23,8 @@ class Person: BaseModel {
     var gender: String?
     var homeworld: String?
     var films: [String]?
+    
+    var newFilms: [Film] = []   // MARK: - next task
     var species: [String]?
     var vehicles: [String]?
     var starships: [String]?

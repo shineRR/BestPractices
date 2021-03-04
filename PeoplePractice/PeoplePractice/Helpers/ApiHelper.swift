@@ -11,6 +11,38 @@ import ObjectMapper
 
 class ApiHelper {
     
+    static func parseSingleModel(url: String, onSucess: @escaping (_ obj: BaseModel) -> ()) {
+        let request = AF.request(url)
+        request.responseJSON { (response) in
+            guard var data = response.value as? [String: Any] else { return }
+            
+            let modelType = ModelTypes[url]
+            var classData: BaseModel?
+            data["objectName"] = modelType.rawValue
+            
+            switch modelType {
+            case .films:
+                classData = Film(JSON: data)
+            case .people:
+                classData = Person(JSON: data)
+            case .planets:
+                classData = Planet(JSON: data)
+            case .species:
+                classData = Species(JSON: data)
+            case .starships:
+                classData = Starship(JSON: data)
+            case .vehicles :
+                classData = Vehicle(JSON: data)
+            default:
+                break
+            }
+            
+            guard let model = classData else { return }
+    
+            onSucess(model)
+        }
+    }
+    
     static func parseApi<T: Mappable>(url: String, of: T.Type, name: String, onSucess: @escaping (_ obj: ApiData) -> ()) {
         let request = AF.request(url)
         request.responseJSON { (response) in

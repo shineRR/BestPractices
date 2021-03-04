@@ -35,8 +35,8 @@ class DataitPersonCollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 10
     }
     
-    private func setupLink(link: String, minYOffset: CGFloat) {
-        ForwardableButton().setupButton(link: link, minYOffset: minYOffset, minX: valueLabel.frame.minX, view: self.contentView, onSucess: { [weak self] button in
+    private func setupLink(link: String, minYOffset: CGFloat, vc: DetailPersonViewController) {
+        ForwardableButton().setupButton(link: link, minYOffset: minYOffset, minX: valueLabel.frame.minX, view: self.contentView, vc: vc, onSucess: { [weak self] button in
             self?.addSubview(button)
             self?.personalSubviews.append(button)
             self?.valueLabel.text = ""
@@ -45,7 +45,7 @@ class DataitPersonCollectionViewCell: UICollectionViewCell {
         })
     }
     
-    func setupCell(property: String, value: String) {
+    func setupCell(property: String, value: String, vc: DetailPersonViewController) {
         
         deleteSubviews()
         setupUI()
@@ -57,11 +57,11 @@ class DataitPersonCollectionViewCell: UICollectionViewCell {
         case .forwardable:
             var minYOffset: CGFloat = 5.0
             for link in links {
-                setupLink(link: link, minYOffset: minYOffset)
+                setupLink(link: link, minYOffset: minYOffset, vc: vc)
                 minYOffset += 20
             }
         default:
-            setupLink(link: value, minYOffset: contentView.frame.midY - 30)
+            setupLink(link: value, minYOffset: contentView.frame.midY - 30, vc: vc)
         }
     }
 }

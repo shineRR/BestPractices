@@ -8,9 +8,12 @@
 import Foundation
 import ObjectMapper
 
-class Starship: BaseMappableModel {
+class Starship: BaseModel {
     
-    var name: String?
+    private let keys = ["name", "model", "manufacturer", "cost",
+                        "length", "max_atmosphering_speed", "crew", "passengers",
+                        "cargo_capacity", "consumables", "hyperdrive_rating", "MGLT",
+                        "starship_class", "pilots", "films", "created", "edited", "url"]
     var model: String?
     var manufacturer: String?
     var cost: String?
@@ -25,12 +28,9 @@ class Starship: BaseMappableModel {
     var starshipClass: String?
     var pilots: [String]?
     var films: [String]?
-    var created: String?
-    var edited: String?
-    var url: String?
     
     public override  func mapping(map: Map) {
-        name <- map["name"]
+        super.mapping(map: map)
         model <- map["model"]
         manufacturer <- map["manufacturer"]
         cost <- map["cost"]
@@ -45,8 +45,9 @@ class Starship: BaseMappableModel {
         starshipClass <- map["starship_class"]
         pilots  <- map["pilots"]
         films  <- map["films"]
-        created <- map["created"]
-        edited <- map["edited"]
-        url <- map["url"]
+    }
+    
+    override func getProperties() -> [ModelProperty] {
+        return ModelHelper.getProperties(keys: keys, dict: map)
     }
 }

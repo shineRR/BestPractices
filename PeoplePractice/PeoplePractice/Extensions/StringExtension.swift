@@ -21,4 +21,8 @@ extension String {
         return false
     }
     
+    func parse(element: String) -> Bool {
+        return self.contains(element)
+    }
+    
 }

@@ -40,6 +40,7 @@ class ViewController: UIViewController {
     private func showTableView(identifier: String) {
         let vc = DataViewController(nibName: "DataViewController", bundle: nil)
         vc.generalUrls = generalUrls
+        vc.sectionName = "People"
         navigationController?.pushViewController(vc, animated: true)
     }
     
