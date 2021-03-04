@@ -55,10 +55,11 @@ class DataitPersonCollectionViewCell: UICollectionViewCell {
         
         switch CellType[links.count] {
         case .forwardable:
-            var minYOffset: CGFloat = 5.0
+            let step = self.frame.height / CGFloat(links.count) - 5
+            var minYOffset: CGFloat = 10.0
             for link in links {
                 setupLink(link: link, minYOffset: minYOffset, vc: vc)
-                minYOffset += 20
+                minYOffset += step
             }
         default:
             setupLink(link: value, minYOffset: contentView.frame.midY - 30, vc: vc)
