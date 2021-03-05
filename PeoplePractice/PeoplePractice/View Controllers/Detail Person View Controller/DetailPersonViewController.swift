@@ -51,7 +51,7 @@ extension DetailPersonViewController: UICollectionViewDataSource, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
+        
         let value = modelProperties[indexPath.row].value
         let lines = value.components(separatedBy: "\n").count
         

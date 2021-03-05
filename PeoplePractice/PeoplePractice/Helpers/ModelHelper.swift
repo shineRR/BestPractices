@@ -14,7 +14,6 @@ struct ModelProperty {
 
 class ModelHelper {
     static func getProperties(keys: [String], dict: Dictionary<String, Any>) -> [ModelProperty] {
-        
         var properties = [ModelProperty]()
            for key in keys {
                if let value = dict[key] as? String, !value.isEmpty {

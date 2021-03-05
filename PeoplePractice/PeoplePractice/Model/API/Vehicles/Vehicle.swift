@@ -8,39 +8,19 @@
 import Foundation
 import ObjectMapper
 
-class Vehicle: BaseModel {
+class Vehicle: BaseVehicle {
     
     private let keys = ["name", "model", "manufacturer", "cost",
                         "length", "max_atmosphering_speed", "crew", "passengers",
                         "cargo_capacity", "consumables", "vehicle_class", "pilots",
                         "films", "created", "edited", "url"]
-    var model: String?
-    var manufacturer: String?
-    var cost: String?
-    var length: String?
-    var maxSpeed: String?
-    var crew: String?
-    var passengers: String?
-    var cargoCapacity: String?
-    var consumables: String?
+
     var vehicleClass: String?
-    var pilots: [String]?
-    var films: [String]?
+
     
     public override func mapping(map: Map) {
         super.mapping(map: map)
-        model <- map["model"]
-        manufacturer <- map["manufacturer"]
-        cost <- map["cost"]
-        length <- map["length"]
-        maxSpeed <- map["max_atmosphering_speed"]
-        crew <- map["crew"]
-        passengers <- map["passengers"]
-        cargoCapacity <- map["cargo_capacity"]
-        consumables <- map["consumables"]
         vehicleClass <- map["vehicle_class"]
-        pilots  <- map["pilots"]
-        films  <- map["films"]
     }
     
     override func getProperties() -> [ModelProperty] {

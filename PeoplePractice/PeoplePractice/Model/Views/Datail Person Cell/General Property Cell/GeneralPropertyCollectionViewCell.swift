@@ -63,8 +63,6 @@ class GeneralPropertyCollectionViewCell: UICollectionViewCell {
             let val = value.validateDate()
             setupLinks(links: [val])
         }
-    
-        collectionView.frame = CGRect(x: collectionView.frame.minX, y: collectionView.frame.minY, width: collectionView.frame.width, height: 0)
         
         collectionView.reloadData()
     }

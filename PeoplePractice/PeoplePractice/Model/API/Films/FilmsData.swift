@@ -9,6 +9,7 @@ import Foundation
 import ObjectMapper
 
 class FilmsData: ApiData {
+    
     var results: [Film]?
     
     override func mapping(map: Map) {

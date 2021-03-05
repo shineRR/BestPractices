@@ -8,6 +8,7 @@
 import Foundation
 
 struct GeneralData: Decodable {
+    
     var films: String
     var people: String
     var planets: String

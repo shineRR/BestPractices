@@ -38,7 +38,6 @@ class ApiHelper {
             }
             
             guard let model = classData else { return }
-    
             onSucess(model)
         }
     }

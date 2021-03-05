@@ -22,6 +22,7 @@ enum ModelTypes: String, CaseIterable {
 }
 
 class ApiData: BaseMappableModel  {
+    
     var object: ModelTypes?
     var count: Int?
     var next: String?
