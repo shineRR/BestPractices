@@ -130,7 +130,7 @@
 		14089B4825ECF6FB00549267 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1459F35525F207C300D0E5F8 /* Cells */,
+				1459F35525F207C300D0E5F8 /* Views */,
 				149E680525ECF9FF00440DE4 /* API */,
 			);
 			path = Model;
@@ -177,23 +177,20 @@
 				147FB1CC25EE2D0100CD5994 /* Helpers */,
 				14089B4825ECF6FB00549267 /* Model */,
 				14089B4725ECF6F100549267 /* View Controllers */,
-				1444AAEC25ECE97D0016ABE3 /* AppDelegate.swift */,
-				1444AAEE25ECE97D0016ABE3 /* SceneDelegate.swift */,
-				1444AAF525ECE9800016ABE3 /* Assets.xcassets */,
-				14D59C3425EE8A4C006590E3 /* Main.storyboard */,
-				1444AAF725ECE9800016ABE3 /* LaunchScreen.storyboard */,
+				1459F37625F234D600D0E5F8 /* Resources */,
+				1459F37025F233DB00D0E5F8 /* Supporting Files */,
 				1444AAFA25ECE9800016ABE3 /* Info.plist */,
 			);
 			path = PeoplePractice;
 			sourceTree = "<group>";
 		};
-		1459F35525F207C300D0E5F8 /* Cells */ = {
+		1459F35525F207C300D0E5F8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				14413B5225EF7F68008AB70E /* Datail Person Cell */,
 				1401BDDC25F1267700D89D71 /* Data Table View Cell */,
 			);
-			path = Cells;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1459F35725F216B300D0E5F8 /* General Property Cell */ = {
@@ -214,6 +211,25 @@
 				149E680625ECFA0F00440DE4 /* GeneralData.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		1459F37025F233DB00D0E5F8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1444AAEC25ECE97D0016ABE3 /* AppDelegate.swift */,
+				1444AAEE25ECE97D0016ABE3 /* SceneDelegate.swift */,
+				14D59C3425EE8A4C006590E3 /* Main.storyboard */,
+				1444AAF725ECE9800016ABE3 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1459F37625F234D600D0E5F8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1444AAF525ECE9800016ABE3 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		147FB1CC25EE2D0100CD5994 /* Helpers */ = {
