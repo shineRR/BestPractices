@@ -7,12 +7,17 @@
 
 import UIKit
 
-class DetailPersonViewController: UIViewController {
+protocol PushableVC {
+    func navigateToNextModel(url: String)
+}
+
+class DetailPersonViewController: UIViewController, PushableVC {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let width = UIScreen.main.bounds.width
-    private let cellIdentifier = "DetailPersonCell"
+    private let defaultCellHeight = 100.0
+    private let cellIdentifier = "DetaitPerson"
     private var modelProperties = [ModelProperty]()
     
     var model: BaseModel?
@@ -23,7 +28,7 @@ class DetailPersonViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        collectionView.register(UINib(nibName: "DataitPersonCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
+        collectionView.register(UINib(nibName: "GeneralPropertyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
         navigationItem.title = model?.name
         modelProperties = model?.getProperties() ?? []
         collectionView.reloadData()
@@ -46,16 +51,20 @@ extension DetailPersonViewController: UICollectionViewDataSource, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: width, height: 100)
+
+        let value = modelProperties[indexPath.row].value
+        let lines = value.components(separatedBy: "\n").count
+        
+        return CGSize(width: width, height: lines > 1 ? 150 : 100)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! DataitPersonCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! GeneralPropertyCollectionViewCell
         
+        cell.delegate = self
         cell.setupCell(property: modelProperties[indexPath.row].property,
-                       value: modelProperties[indexPath.row].value, vc: self)
-        
+                       value: modelProperties[indexPath.row].value)
         return cell
     }
 }

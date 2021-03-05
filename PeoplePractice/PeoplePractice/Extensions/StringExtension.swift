@@ -21,6 +21,14 @@ extension String {
         return false
     }
     
+    func validateDate() -> String {
+        let date = self.toDate()
+        guard let time = date?.toFormat("dd.MM.yyyy") else {
+            return self
+        }
+        return time
+    }
+    
     func parse(element: String) -> Bool {
         return self.contains(element)
     }

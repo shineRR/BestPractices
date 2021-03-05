@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		0716D264B238CA77C4D202C5 /* Pods_PeoplePractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18A527A981690E32E4E3F07 /* Pods_PeoplePractice.framework */; };
 		1401BDC225F0D57500D89D71 /* ForwardableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1401BDC125F0D57500D89D71 /* ForwardableButton.swift */; };
+		1401BDE025F126E700D89D71 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1401BDDE25F126E700D89D71 /* DetailCollectionViewCell.swift */; };
+		1401BDE125F126E700D89D71 /* DetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1401BDDF25F126E700D89D71 /* DetailCollectionViewCell.xib */; };
+		1401BDE525F12B2A00D89D71 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1401BDE425F12B2A00D89D71 /* Constants.swift */; };
 		14089B4E25ECF7D700549267 /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14089B4D25ECF7D700549267 /* DataTableViewCell.swift */; };
 		14413B4E25EF6670008AB70E /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14413B4D25EF6670008AB70E /* BaseModel.swift */; };
-		14413B5525EF7F96008AB70E /* DataitPersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14413B5325EF7F96008AB70E /* DataitPersonCollectionViewCell.swift */; };
-		14413B5625EF7F96008AB70E /* DataitPersonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14413B5425EF7F96008AB70E /* DataitPersonCollectionViewCell.xib */; };
+		14413B5525EF7F96008AB70E /* GeneralPropertyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14413B5325EF7F96008AB70E /* GeneralPropertyCollectionViewCell.swift */; };
+		14413B5625EF7F96008AB70E /* GeneralPropertyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14413B5425EF7F96008AB70E /* GeneralPropertyCollectionViewCell.xib */; };
 		14413B6025EF90DA008AB70E /* ModelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14413B5F25EF90DA008AB70E /* ModelHelper.swift */; };
 		14413B6425EF935F008AB70E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14413B6325EF935F008AB70E /* StringExtension.swift */; };
 		1444AAED25ECE97D0016ABE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444AAEC25ECE97D0016ABE3 /* AppDelegate.swift */; };
@@ -45,10 +48,13 @@
 
 /* Begin PBXFileReference section */
 		1401BDC125F0D57500D89D71 /* ForwardableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardableButton.swift; sourceTree = "<group>"; };
+		1401BDDE25F126E700D89D71 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		1401BDDF25F126E700D89D71 /* DetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCollectionViewCell.xib; sourceTree = "<group>"; };
+		1401BDE425F12B2A00D89D71 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		14089B4D25ECF7D700549267 /* DataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
 		14413B4D25EF6670008AB70E /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
-		14413B5325EF7F96008AB70E /* DataitPersonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataitPersonCollectionViewCell.swift; sourceTree = "<group>"; };
-		14413B5425EF7F96008AB70E /* DataitPersonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataitPersonCollectionViewCell.xib; sourceTree = "<group>"; };
+		14413B5325EF7F96008AB70E /* GeneralPropertyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPropertyCollectionViewCell.swift; sourceTree = "<group>"; };
+		14413B5425EF7F96008AB70E /* GeneralPropertyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralPropertyCollectionViewCell.xib; sourceTree = "<group>"; };
 		14413B5F25EF90DA008AB70E /* ModelHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelHelper.swift; sourceTree = "<group>"; };
 		14413B6325EF935F008AB70E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		1444AAE925ECE97D0016ABE3 /* PeoplePractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeoplePractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +110,23 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
+		1401BDDC25F1267700D89D71 /* Data Table View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				14089B4D25ECF7D700549267 /* DataTableViewCell.swift */,
+			);
+			path = "Data Table View Cell";
+			sourceTree = "<group>";
+		};
+		1401BDDD25F126AF00D89D71 /* Detail Collection View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1401BDDE25F126E700D89D71 /* DetailCollectionViewCell.swift */,
+				1401BDDF25F126E700D89D71 /* DetailCollectionViewCell.xib */,
+			);
+			path = "Detail Collection View Cell";
+			sourceTree = "<group>";
+		};
 		14089B4725ECF6F100549267 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,10 +140,8 @@
 		14089B4825ECF6FB00549267 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1401BDBF25F0D48100D89D71 /* Button */,
-				14413B5225EF7F68008AB70E /* Datail Person Cell */,
+				1459F35525F207C300D0E5F8 /* Cells */,
 				149E680525ECF9FF00440DE4 /* API */,
-				14089B4D25ECF7D700549267 /* DataTableViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -128,8 +149,7 @@
 		14413B5225EF7F68008AB70E /* Datail Person Cell */ = {
 			isa = PBXGroup;
 			children = (
-				14413B5325EF7F96008AB70E /* DataitPersonCollectionViewCell.swift */,
-				14413B5425EF7F96008AB70E /* DataitPersonCollectionViewCell.xib */,
+				1459F35725F216B300D0E5F8 /* General Property Cell */,
 			);
 			path = "Datail Person Cell";
 			sourceTree = "<group>";
@@ -177,11 +197,32 @@
 			path = PeoplePractice;
 			sourceTree = "<group>";
 		};
+		1459F35525F207C300D0E5F8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1401BDBF25F0D48100D89D71 /* Button */,
+				14413B5225EF7F68008AB70E /* Datail Person Cell */,
+				1401BDDC25F1267700D89D71 /* Data Table View Cell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1459F35725F216B300D0E5F8 /* General Property Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1401BDDD25F126AF00D89D71 /* Detail Collection View Cell */,
+				14413B5325EF7F96008AB70E /* GeneralPropertyCollectionViewCell.swift */,
+				14413B5425EF7F96008AB70E /* GeneralPropertyCollectionViewCell.xib */,
+			);
+			path = "General Property Cell";
+			sourceTree = "<group>";
+		};
 		147FB1CC25EE2D0100CD5994 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				147FB1CD25EE2D0C00CD5994 /* ApiHelper.swift */,
 				14413B5F25EF90DA008AB70E /* ModelHelper.swift */,
+				1401BDE425F12B2A00D89D71 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -362,10 +403,11 @@
 				14C6CFEF25EE775A006FA31F /* DetailPersonViewController.xib in Resources */,
 				14FDCA5725EE7F8500FEB72E /* DataViewController.xib in Resources */,
 				1444AAF925ECE9800016ABE3 /* LaunchScreen.storyboard in Resources */,
-				14413B5625EF7F96008AB70E /* DataitPersonCollectionViewCell.xib in Resources */,
+				14413B5625EF7F96008AB70E /* GeneralPropertyCollectionViewCell.xib in Resources */,
 				14D59C3625EE8A4C006590E3 /* Main.storyboard in Resources */,
 				1444AAF625ECE9800016ABE3 /* Assets.xcassets in Resources */,
 				14FDCA6025EE82A300FEB72E /* ViewController.xib in Resources */,
+				1401BDE125F126E700D89D71 /* DetailCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,13 +464,14 @@
 				14A3BCD725ED0C8700CFF881 /* SpeciesData.swift in Sources */,
 				14413B4E25EF6670008AB70E /* BaseModel.swift in Sources */,
 				14FDCA5625EE7F8500FEB72E /* DataViewController.swift in Sources */,
-				14413B5525EF7F96008AB70E /* DataitPersonCollectionViewCell.swift in Sources */,
+				14413B5525EF7F96008AB70E /* GeneralPropertyCollectionViewCell.swift in Sources */,
 				147FB1CE25EE2D0C00CD5994 /* ApiHelper.swift in Sources */,
 				14A3BCC425ED07D400CFF881 /* Planet.swift in Sources */,
 				14413B6425EF935F008AB70E /* StringExtension.swift in Sources */,
 				14FDCA5F25EE82A300FEB72E /* ViewController.swift in Sources */,
 				14089B4E25ECF7D700549267 /* DataTableViewCell.swift in Sources */,
 				14C6CFEE25EE775A006FA31F /* DetailPersonViewController.swift in Sources */,
+				1401BDE525F12B2A00D89D71 /* Constants.swift in Sources */,
 				14A3BCCF25ED0A2B00CFF881 /* Starship.swift in Sources */,
 				1444AAED25ECE97D0016ABE3 /* AppDelegate.swift in Sources */,
 				14A3BCD225ED0A3200CFF881 /* Vehicle.swift in Sources */,
@@ -444,6 +487,7 @@
 				14413B6025EF90DA008AB70E /* ModelHelper.swift in Sources */,
 				14A3BCC125ED07CE00CFF881 /* PlanetsData.swift in Sources */,
 				147FB1D325EE2F5900CD5994 /* ApiData.swift in Sources */,
+				1401BDE025F126E700D89D71 /* DetailCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
