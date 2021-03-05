@@ -26,8 +26,7 @@ class GeneralPropertyCollectionViewCell: UICollectionViewCell {
     
     private let identifier = "DetailCell"
     private var links = [String]()
-    
-    var delegate: PushableVC?
+    private var completionHandler: ((_ url: String) -> ())?
     
     override func awakeFromNib() {
         collectionView.dataSource = self
@@ -49,10 +48,9 @@ class GeneralPropertyCollectionViewCell: UICollectionViewCell {
         valueLabel.text = optionalValue
     }
     
-    func setupCell(property: String, value: String) {
-        
+    func setupCell(property: String, value: String, completionHandler: @escaping (_ url: String) -> ()) {
         propertyLabel.text = property + ":"
-        
+        self.completionHandler = completionHandler
         self.links.removeAll()
         let links = value.components(separatedBy: "\n")
         
@@ -75,9 +73,6 @@ extension GeneralPropertyCollectionViewCell: UICollectionViewDataSource, UIColle
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        valueLabel.frame = CGRect(x: valueLabel.frame.minX, y: valueLabel.frame.minY, width: valueLabel.frame.width, height: 0)
-        
-        
         return CGSize(width: collectionView.frame.width, height: 30)
     }
 
@@ -91,6 +86,7 @@ extension GeneralPropertyCollectionViewCell: UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.navigateToNextModel(url: links[indexPath.row])
+        guard let completion = completionHandler else { return }
+        completion(links[indexPath.row])
     }
 }

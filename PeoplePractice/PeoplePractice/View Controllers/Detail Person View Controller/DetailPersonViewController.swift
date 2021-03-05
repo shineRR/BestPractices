@@ -62,9 +62,10 @@ extension DetailPersonViewController: UICollectionViewDataSource, UICollectionVi
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! GeneralPropertyCollectionViewCell
         
-        cell.delegate = self
-        cell.setupCell(property: modelProperties[indexPath.row].property,
-                       value: modelProperties[indexPath.row].value)
+        cell.setupCell(property: modelProperties[indexPath.row].property, value: modelProperties[indexPath.row].value, completionHandler: { [weak self] url in
+    
+            self?.navigateToNextModel(url: url)
+        })
         return cell
     }
 }
