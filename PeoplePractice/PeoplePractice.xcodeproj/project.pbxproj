@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0716D264B238CA77C4D202C5 /* Pods_PeoplePractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18A527A981690E32E4E3F07 /* Pods_PeoplePractice.framework */; };
-		1401BDC225F0D57500D89D71 /* ForwardableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1401BDC125F0D57500D89D71 /* ForwardableButton.swift */; };
 		1401BDE025F126E700D89D71 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1401BDDE25F126E700D89D71 /* DetailCollectionViewCell.swift */; };
 		1401BDE125F126E700D89D71 /* DetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1401BDDF25F126E700D89D71 /* DetailCollectionViewCell.xib */; };
 		1401BDE525F12B2A00D89D71 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1401BDE425F12B2A00D89D71 /* Constants.swift */; };
@@ -47,7 +46,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1401BDC125F0D57500D89D71 /* ForwardableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardableButton.swift; sourceTree = "<group>"; };
 		1401BDDE25F126E700D89D71 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		1401BDDF25F126E700D89D71 /* DetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		1401BDE425F12B2A00D89D71 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -102,14 +100,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1401BDBF25F0D48100D89D71 /* Button */ = {
-			isa = PBXGroup;
-			children = (
-				1401BDC125F0D57500D89D71 /* ForwardableButton.swift */,
-			);
-			path = Button;
-			sourceTree = "<group>";
-		};
 		1401BDDC25F1267700D89D71 /* Data Table View Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,7 +190,6 @@
 		1459F35525F207C300D0E5F8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				1401BDBF25F0D48100D89D71 /* Button */,
 				14413B5225EF7F68008AB70E /* Datail Person Cell */,
 				1401BDDC25F1267700D89D71 /* Data Table View Cell */,
 			);
@@ -217,6 +206,16 @@
 			path = "General Property Cell";
 			sourceTree = "<group>";
 		};
+		1459F36E25F2320100D0E5F8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				14413B4D25EF6670008AB70E /* BaseModel.swift */,
+				147FB1D225EE2F5900CD5994 /* ApiData.swift */,
+				149E680625ECFA0F00440DE4 /* GeneralData.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		147FB1CC25EE2D0100CD5994 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,9 +229,7 @@
 		149E680525ECF9FF00440DE4 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				147FB1D225EE2F5900CD5994 /* ApiData.swift */,
-				149E680625ECFA0F00440DE4 /* GeneralData.swift */,
-				14413B4D25EF6670008AB70E /* BaseModel.swift */,
+				1459F36E25F2320100D0E5F8 /* Base */,
 				14A3BCD425ED0C7100CFF881 /* Species */,
 				14A3BCC725ED09F000CFF881 /* Starships */,
 				14A3BCC625ED09E200CFF881 /* Vehicles */,
@@ -476,7 +473,6 @@
 				1444AAED25ECE97D0016ABE3 /* AppDelegate.swift in Sources */,
 				14A3BCD225ED0A3200CFF881 /* Vehicle.swift in Sources */,
 				14A3BCBD25ED075C00CFF881 /* Film.swift in Sources */,
-				1401BDC225F0D57500D89D71 /* ForwardableButton.swift in Sources */,
 				14A3BCB825ED070C00CFF881 /* FilmsData.swift in Sources */,
 				14A6888425EE1D18001FC37D /* StarshipsData.swift in Sources */,
 				149E680725ECFA0F00440DE4 /* GeneralData.swift in Sources */,
