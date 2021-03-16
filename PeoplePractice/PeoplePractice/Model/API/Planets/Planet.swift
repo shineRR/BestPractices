@@ -8,9 +8,11 @@
 import Foundation
 import ObjectMapper
 
-class Planet: BaseMappableModel {
+class Planet: BaseModel {
     
-    var name: String?
+    private let keys = ["name", "rotation_period", "orbital_period", "diameter",
+                        "climate", "gravity", "terrain", "surface_water",
+                        "population", "residents", "films", "created", "edited", "url"]
     var rotationPeriod: String?
     var orbitalPeriod: String?
     var diameter: String?
@@ -21,12 +23,9 @@ class Planet: BaseMappableModel {
     var population: String?
     var residents: [String]?
     var films: [String]?
-    var created: String?
-    var edited: String?
-    var url: String?
 
     public override func mapping(map: Map) {
-        name <- map["name"]
+        super.mapping(map: map)
         rotationPeriod <- map["rotation_period"]
         orbitalPeriod <- map["orbital_period"]
         diameter <- map["diameter"]
@@ -37,8 +36,9 @@ class Planet: BaseMappableModel {
         population <- map["population"]
         residents <- map["residents"]
         films <- map["films"]
-        created <- map["created"]
-        edited <- map["edited"]
-        url <- map["url"]
+    }
+    
+    override func getProperties() -> [ModelProperty] {
+        return ModelHelper.getProperties(keys: keys, dict: map)
     }
 }

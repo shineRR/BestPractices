@@ -16,7 +16,7 @@ class DataViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var listModels: [BaseModel] = []
-    private var sectionName: String?
+    var sectionName: String?
     var generalUrls: GeneralData?
     
     //  MARK: - Life cycle
@@ -28,13 +28,15 @@ class DataViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(DataTableViewCell.self, forCellReuseIdentifier: "myCell")
         navigationController?.navigationBar.isHidden = false
+        navigationItem.title = sectionName
         fetchData()
     }
     
     //  MARK: - Functions
     
     private func fetchData() {
-        ApiHelper.parseApi(url: generalUrls?.people ?? "", of: PeopleData.self, name: "People", onSucess: { [weak self] obj in
+        ApiHelper.parseApi(url: generalUrls?.people ?? "", of: PeopleData.self,
+                           name: "People", onSucess: { [weak self] obj in
             if let model = obj as? PeopleData,
                let results = model.results {
                 self?.sectionName = obj.object?.rawValue
@@ -48,10 +50,6 @@ class DataViewController: UIViewController {
 //  MARK: - Extension
 
 extension DataViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionName
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listModels.count
@@ -68,11 +66,8 @@ extension DataViewController: UITableViewDelegate, UITableViewDataSource {
         
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = DetailPersonViewController(nibName: "DetailPersonViewController", bundle: nil)
-        guard let dataFromCell = tableView.cellForRow(at: indexPath) as? DataTableViewCell else { return }
         
-        vc.person = listModels[indexPath.row] as? Person
-        vc.navigationItem.title = dataFromCell.textLabel?.text
-    
+        vc.model = listModels[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
 }

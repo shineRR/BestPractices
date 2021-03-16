@@ -7,10 +7,12 @@
 
 import Foundation
 import ObjectMapper
-// вот тут бы я создал общий класс для всех данных
-class Species: BaseMappableModel {
+
+class Species: BaseModel {
     
-    var name: String?
+    private let keys = ["name", "classification", "designation", "average_height", "hair_colors",
+                        "skin_colors", "eye_colors", "average_lifespan", "language",
+                        "homeworld", "people", "films", "created", "edited", "url"]
     var classification: String?
     var designation: String?
     var avgHeight: String?
@@ -22,16 +24,9 @@ class Species: BaseMappableModel {
     var language: String?
     var people: [String]?
     var films: [String]?
-    
-    // сделать переменную по типу
-    var newFilms: [Film] = [] // и вот так каждый массив будет иметь свой класс и мы будем обращаться к главное модели и брать у него данные (если возможно)
-    
-    var created: String?
-    var edited: String?
-    var url: String?
 
     override func mapping(map: Map) {
-        name <- map["name"]
+        super.mapping(map: map)
         classification <- map["classification"]
         designation <- map["designation"]
         avgHeight <- map["average_height"]
@@ -43,8 +38,9 @@ class Species: BaseMappableModel {
         language <- map["language"]
         people <- map["people"]
         films <- map["films"]
-        created <- map["created"]
-        edited <- map["edited"]
-        url <- map["url"]
+    }
+    
+    override func getProperties() -> [ModelProperty] {
+        return ModelHelper.getProperties(keys: keys, dict: map)
     }
 }

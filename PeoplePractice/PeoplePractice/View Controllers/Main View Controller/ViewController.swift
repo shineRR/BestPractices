@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var downloadDataButton: UIButton!
     
-    private let requestURL = "https://swapi.dev/api/"
     private var generalUrls: GeneralData?
     
     //  MARK: - Life cycle
@@ -40,6 +39,7 @@ class ViewController: UIViewController {
     private func showTableView(identifier: String) {
         let vc = DataViewController(nibName: "DataViewController", bundle: nil)
         vc.generalUrls = generalUrls
+        vc.sectionName = "People"
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     }
     
     private func doRequest() {
-        ApiHelper.requestForGeneralData(url: requestURL, onSucess: { [weak self] data in
+        ApiHelper.requestForGeneralData(url: Constants.baseURL, onSucess: { [weak self] data in
             self?.generalUrls = data
             self?.showTableView(identifier: "tableViewController")
         })
