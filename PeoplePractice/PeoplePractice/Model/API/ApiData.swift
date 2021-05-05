@@ -9,7 +9,13 @@ import Foundation
 import ObjectMapper
 
 enum ModelTypes: String, CaseIterable {
-    case people = "People", starships = "Starships", species = "Species", films = "Films", planets = "Planets", vehicles = "Vehicles", wrong = "wrong"
+    case people = "People",
+         starships = "Starships",
+         species = "Species",
+         films = "Films",
+         planets = "Planets",
+         vehicles = "Vehicles",
+         wrong = "wrong"
 }
 
 class ApiData: BaseMappableModel  {

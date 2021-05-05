@@ -19,6 +19,13 @@ class ModelHelper {
         for key in keys {
             if let value = dict[key] as? String, !value.isEmpty {
                 properties.append(ModelProperty(property: key.normalize(), value: value))
+            } else if let value = dict[key] as? [String], !value.isEmpty {
+                var string = ""
+                for item in value {
+                    string += "\(item) \n"
+                }
+                
+                properties.append(ModelProperty(property: key.normalize(), value: String(string.dropLast())))
             }
         }
         return properties

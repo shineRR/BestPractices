@@ -9,8 +9,6 @@ import UIKit
 
 class DataTableViewCell: UITableViewCell {
     
-    var url: String?
-    
     func setupCell(modelName: String?) {
         self.textLabel?.text = modelName
     }
